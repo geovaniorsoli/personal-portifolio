@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import img from '../public/img/pic.png'
 import sty from "../styles/home.module.css"
-
 import { Separator } from "@/components/ui/separator"
 
 export default function Home() {
@@ -26,8 +25,7 @@ export default function Home() {
                 </h2>
                 <h1 className={sty.aboutTitle}>STACK</h1>
                 <div className={sty.containerStack}>
-                    <img src="https://skillicons.dev/icons?i=html,css,js,bootstrap,next" />
-                    <img src="https://skillicons.dev/icons?i=express,mongo,nodejs" />
+                    <img src="https://skillicons.dev/icons?i=html,css,js,tailwind,next,express,mongo,nodejs" />
                 </div>
                 <h1 className={sty.aboutTitle}>SOFTWARES</h1>
                 <div className={sty.containerStack}>

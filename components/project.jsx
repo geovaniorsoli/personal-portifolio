@@ -63,7 +63,9 @@ export default function Project() {
             </div>
 
             <div className={sty.projectContainer}>
+                <a href="https://nowecompany.com.br" target="_blank">
                 <img className={sty.img} src="/img/project/nowepage.png" alt="" />
+                </a>
                 <div className={sty.contentText}>
                     <h1 className={sty.description}>NOWE-PAGE </h1>
                     <Dialog>

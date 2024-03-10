@@ -26,6 +26,7 @@
     border-radius: 5px;
     margin: 0 auto;
     transition: all .3s ease-in-out;
+    cursor: pointer;
 }
 
 .img:hover{
