@@ -1,16 +1,22 @@
 import Image from 'next/image'
 import img from '../public/img/pic.png'
 import sty from "../styles/home.module.css"
+
+import { Separator } from "@/components/ui/separator"
+
 export default function Home() {
     return (
         <>
             <div className={sty.containerCenter}>
                 <div className={sty.textContainer}>
                     <h1 className={sty.title}>Web dev.</h1>
-                    <h2 className={sty.subtitle}>Olá, sou o Geovani Orsoli. Apaixonado por Front-end e design de UI UX</h2>
+                    <h2 className={sty.subtitle}>Olá, sou o Geovani Orsoli. Apaixonado por Front-end e design de UI UX.</h2>
                 </div>
                 <Image src={img} alt="Descrição" width={300} height={300} />
             </div>
+
+            <Separator />
+
             <div className={sty.aboutContainer}>
                 <h1 className={sty.aboutTitle}>
                     SOBRE MIM
@@ -21,13 +27,17 @@ export default function Home() {
                 <h1 className={sty.aboutTitle}>STACK</h1>
                 <div className={sty.containerStack}>
                     <img src="https://skillicons.dev/icons?i=html,css,js,bootstrap,next" />
-                    <img  className={sty.stack} src="https://skillicons.dev/icons?i=express,mongo,nodejs" />
+                    <img src="https://skillicons.dev/icons?i=express,mongo,nodejs" />
                 </div>
                 <h1 className={sty.aboutTitle}>SOFTWARES</h1>
                 <div className={sty.containerStack}>
-                    <img className={sty.stack} src="https://skillicons.dev/icons?i=ps,ae,premiere,figma" />
+                    <img src="https://skillicons.dev/icons?i=ps,ae,premiere,figma" />
                 </div>
             </div>
+
+            <div className={sty.divider}></div>
+            <Separator />
+
         </>
     )
 }

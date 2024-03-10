@@ -1,0 +1,60 @@
+.mainTitle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem auto;
+    font-size: 4rem;
+    font-family: bold;
+    color: #E0E0E0;
+
+}
+
+.projectContainer{
+    width: 50%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
+
+
+}
+
+.img{
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 0 auto;
+    transition: all .3s ease-in-out;
+}
+
+.img:hover{
+    scale: 1.01;
+}
+
+.description{
+    font-size: 3rem;
+    color: #E0E0E0;
+    margin-left: -10px;
+    font-family: bold;
+}
+
+.contentText{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1;
+}
+
+.conheca{
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: all .1s ease-in-out;
+}
+
+.conheca:hover{
+    color: #006eff;
+
+}
