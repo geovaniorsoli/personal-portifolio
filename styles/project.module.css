@@ -36,7 +36,7 @@
 .description{
     font-size: 3rem;
     color: #E0E0E0;
-    margin-left: -10px;
+    margin-right: 28px;
     font-family: bold;
 }
 
@@ -62,4 +62,17 @@
 .badge{
     width: 8.5%;
     margin-bottom: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link{
+    text-decoration: underline;
+    color: #006eff;
+    display: flex;
+}
+
+.containerContentAcordion{
+    display: grid;
 }
