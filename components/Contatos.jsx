@@ -55,7 +55,7 @@ export default function Contato() {
 
 
       <div className={sty.containerCenterButton}>
-        <a href='#'
+        <a target='_blank' href='https://github.com/geovaniorsoli'
           onMouseOver={() => mouseOn('github')}
           onMouseOut={mouseOff}
           className={sty.buttonGithub}>
