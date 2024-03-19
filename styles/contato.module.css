@@ -1,0 +1,133 @@
+.containerCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 50%;
+}
+.title{
+    font-size: 4rem;
+    font-family: bold;
+    color: #E0E0E0;
+    letter-spacing: -3px;
+    margin-left: -10px;
+}
+
+.form{
+    background-color: #E0E0E0;
+    display: grid;
+    padding: 3rem;
+    border-radius: 5px;
+    width: 70%;
+    margin: 1rem;
+}
+
+.inputGroup{
+    display: flex;
+    gap: .2rem;
+    margin-bottom: .2rem;
+}
+
+.subTitleForm{
+    font-size: 1rem;
+    color: #353535c9;
+    margin: 1rem 1rem 0rem 0rem;
+    display: flex;
+    align-items: center;
+}
+
+.InputButton{
+    margin-top: 1rem;
+}
+
+.InputFormTextArea{
+    height: 200px;
+}
+
+.containerCenterButton{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 50%;
+    gap: 1rem;
+}
+
+.buttonGithub{
+    background-color: #ffffffc9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 300px;
+    border-radius: 5px;
+    color: rgb(54, 54, 54);
+    transition: all .1s ease-in-out;
+}
+
+.buttonGithub:hover{
+    background-color: #d7d7d7c9;
+}
+
+.buttonEmail{
+    background-color: #ff4949c9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 300px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+
+.buttonEmail:hover{
+    background-color: #cd3a3ac9;
+}
+
+.buttonGithub{
+    background-color: #ffffffc9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 300px;
+    border-radius: 5px;
+    color: rgb(54, 54, 54);
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+
+}
+
+.buttonGithub:hover{
+    background-color: #d7d7d7c9;
+}
+
+
+.titleCV{
+    font-size: 3rem;
+    font-family: bold;
+    color: #E0E0E0;
+    letter-spacing: -2px;
+    margin-left: -10px;
+    cursor: poiner;
+    transition: .1s ease-in-out;
+    margin: 1rem auto;
+}
+
+.titleCV:hover{
+    color: #b1b1b1;
+}
+
+
+
+
+@media (max-width: 600px){
+    .title{
+        font-size: 3rem;
+        color: #E0E0E0;
+        letter-spacing: -2px;
+        margin-left: -5px;
+    }
+}
