@@ -6,7 +6,6 @@ import { Toaster, toast } from 'sonner'
 import { Button } from "@/components/ui/button"
 
 export default function Contato() {
-  //trocar texto do botao ao passar o mouse
   const textoOriginal = {
     github: 'Github',
     email: 'Email',
@@ -31,7 +30,6 @@ export default function Contato() {
     setBtnTxt({ ...textoOriginal })
   }
 
-  //copiar elemento para area de transfencia
   const [copiado, setCopiado] = useState(false)
 
   return (

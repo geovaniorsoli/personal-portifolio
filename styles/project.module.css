@@ -8,7 +8,9 @@
     color: #E0E0E0;
 }
 
-
+.tipMobile{
+    display: none;
+}
 .projectContainer{
     width: 50%;
     display: grid;
