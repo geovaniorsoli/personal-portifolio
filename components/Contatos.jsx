@@ -34,6 +34,7 @@ export default function Contato() {
 
   return (
     <>
+     <div id="contato"></div>
       <div className={sty.containerCenter}>
         <h1 className={sty.title}>ENTRE EM CONTATO</h1>
       </div>

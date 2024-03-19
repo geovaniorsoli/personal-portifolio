@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <>
         <Spotlight />
-            <div className={sty.containerCenter}>
+            <div id='home' className={sty.containerCenter}>
                 <div className={sty.textContainer}>
                     <h1 className={sty.title}>Web dev.</h1>
                     <TextGenerateEffect className={sty.subtitle} words="Olá, sou o Geovani Orsoli. Apaixonado por Front-end e design de UI UX." /> 
@@ -17,8 +17,8 @@ export default function Home() {
             </div>
 
 
-            <div className={sty.aboutContainer}>
-                <h1 className={sty.aboutTitle}>
+            <div id='sobre' className={sty.aboutContainer}>
+                <h1  className={sty.aboutTitle}>
                     SOBRE MIM
                 </h1>
                 <h2 className={sty.aboutSubtitle}>

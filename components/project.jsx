@@ -30,7 +30,8 @@ import { Info } from 'lucide-react';
 
 export default function Project() {
     return (
-        <>
+        <>  
+            <div id="projeto"></div>
             <h1 className={sty.mainTitle}>PROJETOS</h1>
             <h1 className={sty.tipMobile}> arraste para o lado para ver mais!</h1>
             <div className={sty.projectContainer}>
