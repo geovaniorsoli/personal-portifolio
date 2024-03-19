@@ -16,7 +16,6 @@ export default function Home() {
                 <Image src={img} alt="Descrição" width={300} height={300} />
             </div>
 
-            <Separator />
 
             <div className={sty.aboutContainer}>
                 <h1 className={sty.aboutTitle}>

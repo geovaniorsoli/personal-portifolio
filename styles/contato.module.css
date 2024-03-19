@@ -125,9 +125,47 @@
 
 @media (max-width: 600px){
     .title{
+        font-size: 1.5rem;
+        color: #E0E0E0;
+        letter-spacing: 0px;
+    }
+
+    .containerCenter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .form{
+        background-color: #E0E0E0;
+        display: grid;
+        padding: 2rem;
+        border-radius: 5px;
+        width: 90%;
+        margin: 1rem;
+    }
+    
+    .inputGroup{
+        display: grid;
+        gap: .2rem;
+        margin-bottom: .2rem;
+    }
+
+    .InputFormTextArea{
+        height: 150px;
+    }
+
+    .titleCV{
         font-size: 3rem;
+        font-family: bold;
         color: #E0E0E0;
         letter-spacing: -2px;
-        margin-left: -5px;
+        margin-left: -10px;
+        cursor: poiner;
+        transition: .1s ease-in-out;
+        margin: 3rem auto;
     }
+    
 }

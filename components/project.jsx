@@ -32,17 +32,17 @@ export default function Project() {
     return (
         <>
             <h1 className={sty.mainTitle}>PROJETOS</h1>
-
+            <h1 className={sty.tipMobile}> arraste para o lado para ver mais!</h1>
             <div className={sty.projectContainer}>
                 <Badge variant="destructive" className={sty.badge}> Privado </Badge>
-                <Carousel>
+                <Carousel >
                     <CarouselContent>
                         <CarouselItem><img className={sty.img} src="/img/weon1.png" alt="" /></CarouselItem>
                         <CarouselItem><img className={sty.img} src="/img/weon2.png" alt="" /></CarouselItem>
                         <CarouselItem><img className={sty.img} src="/img/weon3.png" alt="" /></CarouselItem>
                     </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
+                    <CarouselPrevious className={sty.carosel} />
+                    <CarouselNext className={sty.carosel} />
                 </Carousel>
                 <div className={sty.contentText}>
                     <h1 className={sty.description}>WEON </h1>
@@ -141,8 +141,8 @@ export default function Project() {
                         <CarouselItem><img className={sty.img} src="/img/climatempo1.png" alt="" /></CarouselItem>
                         <CarouselItem><img className={sty.img} src="/img/climatempo2.png" alt="" /></CarouselItem>
                     </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
+                    <CarouselPrevious  className={sty.carosel}/>
+                    <CarouselNext className={sty.carosel}/>
                 </Carousel>
                 <div className={sty.contentText}>
                     <h1 className={sty.description}>CLIMA TEMPO </h1>
@@ -239,8 +239,8 @@ export default function Project() {
                         <CarouselItem><img className={sty.img} src="/img/MARKET1.png" alt="" /></CarouselItem>
                         <CarouselItem><img className={sty.img} src="/img/MARKET2.png" alt="" /></CarouselItem>
                     </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
+                    <CarouselPrevious className={sty.carosel} />
+                    <CarouselNext className={sty.carosel} />
                 </Carousel>
                 <div className={sty.contentText}>
                     <h1 className={sty.description}>MARKET-LIST </h1>

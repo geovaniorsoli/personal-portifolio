@@ -64,6 +64,7 @@
 @media (max-width: 600px){
     .title{
         font-size: 3rem;
+        width: 200%;
         color: #E0E0E0;
         letter-spacing: -2px;
         margin-left: -5px;
@@ -74,4 +75,26 @@
         color: #A1A1A1;
         margin-top: -10px;
     }
+
+    .aboutTitle{
+        font-size: 3rem;
+        font-family: bold;
+        color: #E0E0E0;
+        margin-top: 5rem;
+    }
+
+    .aboutContainer{
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+    
+    .aboutSubtitle{
+        font-size: 1.5rem;
+    }
+
+    
 }
