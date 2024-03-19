@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import sty from '../styles/contato.module.css'
-import { Input } from "@/components/ui/Input"
+import { Input } from '../components/ui/input'
 import { Textarea } from "@/components/ui/textarea"
 import { Toaster, toast } from 'sonner'
 import { Button } from "@/components/ui/button"
