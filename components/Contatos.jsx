@@ -9,11 +9,15 @@ export default function Contato() {
   const textoOriginal = {
     github: 'Github',
     email: 'Email',
+    cv: 'Curriculo',
+    carta: 'Apresentação'
   }
 
   const TextoIndicado = {
     github: 'github/geovaniorsoli',
     email: 'geovanispop@gmail.com',
+    cv: 'Visualizar Curriculo',
+    carta: 'Visualizar Apresentação'
   }
 
   const [btnTxt, setBtnTxt] = useState(textoOriginal)
@@ -34,7 +38,7 @@ export default function Contato() {
 
   return (
     <>
-     <div id="contato"></div>
+    <div id="contato"></div>
       <div className={sty.containerCenter}>
         <h1 className={sty.title}>ENTRE EM CONTATO</h1>
       </div>
@@ -77,10 +81,30 @@ export default function Contato() {
 
       </div>
       
+
       <div className={sty.containerCenter}>
-        <a target="_blank" href="/Geovani Orsoli Gongora (CV) .pdf">
-          <h1 className={sty.titleCV}>BAIXAR CURRICULO</h1>
+        <h1 className={sty.title}>PROFISSIONAL</h1>
+      </div>
+
+
+      <div className={sty.containerCenterButton}>
+        <a target='_blank' href='https://docs.google.com/document/d/1FHFtmjtRmnku5u-4lX7I7-nhoJ9Ifd9NLdoI6Lx5vs8/edit?usp=sharing'
+          onMouseOver={() => mouseOn('cv')}
+          onMouseOut={mouseOff}
+          className={sty.buttonGithub}>
+          {btnTxt.cv}
         </a>
+        <Toaster />
+
+        <a
+        target='_black' href='https://docs.google.com/document/d/1sCBlbTlkLLsgNg7HTDTt_NsUv-4iGNZJ1ASakRvGRDM/edit?usp=sharing'
+        onMouseOver={() => mouseOn('carta')}
+        onMouseOut={mouseOff}
+        className={sty.buttonGithub}
+      >
+        {btnTxt.carta}
+      </a>
+
       </div>
     </>
 
