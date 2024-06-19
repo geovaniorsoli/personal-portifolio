@@ -10,8 +10,9 @@ export default function Home() {
         <Spotlight />
             <div id='home' className={sty.containerCenter}>
                 <div className={sty.textContainer}>
-                    <h1 className={sty.title}>Web dev.</h1>
-                    <TextGenerateEffect className={sty.subtitle} words="Olá, sou o Geovani Orsoli. Apaixonado por Tecnologia." /> 
+                    <TextGenerateEffect className={sty.subtitle} words="Olá sou" /> 
+                    <h1 className={sty.title}>Geovani Orsoli</h1>
+                    <TextGenerateEffect className={sty.subtitle} words="um apaixonado entusiasta por Tecnologia." /> 
                 </div>
                 <Image src={img} alt="Descrição" width={300} height={300} />
             </div>
@@ -22,7 +23,7 @@ export default function Home() {
                     SOBRE MIM
                 </h1>
                 <h2 className={sty.aboutSubtitle}>
-                Meu nome é Geovani Orsoli, tenho 18 anos e desde pequeno sou apaixonado por tecnologia. Minha curiosidade me levou a desenvolver familiaridade com computadores através de jogos, produção de vídeos e imagens, e cursos na área de robótica, incluindo trabalho com Arduino e programação em blocos. No ensino médio, estudei programação e cursei Informática no Bento Quirino, onde adquiri conhecimentos valiosos. Desenvolvi um projeto de TCC baseado em um sistema GED (Gerenciamento Eletrônico de Documentos) com tabelas customizáveis e dashboards para análise de dados. O sucesso desse projeto levou meu grupo a continuar trabalhando nele fora da escola, e ele permanece ativo até hoje.     
+                Atualmente Tenho 18 anos e desde pequeno sou apaixonado por tecnologia. Minha curiosidade me levou a desenvolver familiaridade com computadores através de jogos, produção de vídeos e imagens, e cursos na área de robótica, incluindo trabalho com Arduino e programação em blocos. No ensino médio, estudei programação e cursei Informática no Bento Quirino, onde adquiri conhecimentos valiosos. Desenvolvi um projeto de TCC baseado em um sistema GED (Gerenciamento Eletrônico de Documentos) com tabelas customizáveis e dashboards para análise de dados. O sucesso desse projeto levou meu grupo a continuar trabalhando nele fora da escola, e ele permanece ativo até hoje.     
                 </h2> 
 
                 <h1 className={sty.aboutTitle}>STACK</h1>
