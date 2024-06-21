@@ -2,6 +2,7 @@ import Nav from "../components/Nav"
 import Home from "../components/Home"
 import Project from "@/components/project"
 import Contato from "@/components/Contatos"
+import Footer from "@/components/Footer"
 export default function index() {
   return (
     <>
@@ -9,6 +10,7 @@ export default function index() {
       <Home />
       <Project />
       <Contato />
+      <Footer />
     </>
   )
 }

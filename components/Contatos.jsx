@@ -10,14 +10,17 @@ export default function Contato() {
     github: 'Github',
     email: 'Email',
     cv: 'Curriculo',
-    carta: 'Apresentação'
+    carta: 'Apresentação',
+    Linkedin: 'Linkedin'
   }
 
   const TextoIndicado = {
     github: 'github/geovaniorsoli',
     email: 'geovanispop@gmail.com',
     cv: 'Visualizar Curriculo',
-    carta: 'Visualizar Apresentação'
+    carta: 'Visualizar Apresentação',
+    Linkedin: 'Geovani Orsoli Gongora'
+    
   }
 
   const [btnTxt, setBtnTxt] = useState(textoOriginal)
@@ -79,6 +82,16 @@ export default function Contato() {
         {btnTxt.email}
       </a>
 
+        <a
+        onMouseOver={() => mouseOn('Linkedin')}
+        onMouseOut={mouseOff}
+        className={sty.buttonLinkedin}
+        onClick={() => {
+        }}
+      >
+        {btnTxt.Linkedin} 
+      </a>
+
       </div>
       
 
@@ -104,7 +117,6 @@ export default function Contato() {
       >
         {btnTxt.carta}
       </a>
-
       </div>
     </>
 
