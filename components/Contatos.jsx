@@ -83,6 +83,7 @@ export default function Contato() {
       </a>
 
         <a
+         target='_blank' href='https://www.linkedin.com/in/geovani-orsoli-gongora-6b8481223/'
         onMouseOver={() => mouseOn('Linkedin')}
         onMouseOut={mouseOff}
         className={sty.buttonLinkedin}
