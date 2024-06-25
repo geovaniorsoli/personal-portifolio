@@ -282,6 +282,58 @@ export default function Project() {
                     </Dialog>
                 </div>
             </div>
+
+            <div className={sty.projectContainer}>
+                <Badge variant="secondary" className={sty.badge}> Publico </Badge>
+                <Carousel>
+                    <CarouselContent>
+                        <CarouselItem><img className={sty.img} src="/img/scriptoitchau1.png" alt="" /></CarouselItem>
+                        <CarouselItem><img className={sty.img} src="/img/scriptoitchau2.png" alt="" /></CarouselItem>
+                    </CarouselContent>
+                    <CarouselPrevious className={sty.carosel} />
+                    <CarouselNext className={sty.carosel} />
+                </Carousel>
+                <div className={sty.contentText}>
+                    <h1 className={sty.description}>AUTOMAÇÃO PONTO ELETRÔNICO</h1>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <h1 className={sty.conheca}><Info/></h1>
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-[425px]">
+                            <DialogHeader>
+                                <DialogTitle>AUTOMAÇÃO PARA PONTO</DialogTitle>
+                                <Accordion type="single" collapsible className="w-full">
+                                    <AccordionItem value="item-1">
+                                        <AccordionTrigger>SOBRE</AccordionTrigger>
+                                        <AccordionContent>
+                                           Uma script para bater ponto de forma facilitada na plataforma OITCHAU.
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                    <AccordionItem value="item-2">
+                                        <AccordionTrigger>STACK</AccordionTrigger>
+                                        <AccordionContent>
+                                            <li>NEXT.JS</li>
+                                            <li>NEXT UI</li>
+                                            <li>PYTHON</li>
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                 
+                                    <AccordionItem value="item-3">
+                                        <AccordionTrigger>VER O PROJETO</AccordionTrigger>
+                                        <AccordionContent>
+                                        <div className={sty.containerContentAcordion}>
+                                            <a className={sty.link} href="https://github.com/geovaniorsoli/oitchau-facilitador-script" target="_blank"> Code Script - github </a>
+                                            <a className={sty.link} href="https://github.com/geovaniorsoli/oitchau-facilitador" target="_blank"> Code Page - github </a>
+                                            <a className={sty.link} href="https://oitchau-facilitador.vercel.app/" target="_blank"> view - web </a>
+                                        </div>
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                </Accordion>
+                            </DialogHeader>
+                        </DialogContent>
+                    </Dialog>
+                </div>
+            </div>
         </>
     )
 }
