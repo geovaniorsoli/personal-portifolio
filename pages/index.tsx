@@ -1,3 +1,4 @@
+"use client"
 import NavigationBar from '@/components/nav';
 import {
   Avatar,
@@ -8,16 +9,32 @@ import {
   Image,
   Button,
   Chip,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure
+
 } from "@nextui-org/react";
 import * as lucide from "lucide-react"
 import sty from "../styles/main.module.css"
+import { useState } from 'react';
 
 
 const project = [
-  {name: "", img: "", desc: "", }
+  { img: "", title: "", desc: "", isPrivate: "", }
 ]
 
+
 export default function Page() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [backdrop, setBackdrop] = useState('blur')
+
+  const handleOpen = (backdrop: any) => {
+    setBackdrop(backdrop)
+    onOpen();
+  }
   return (
     <>
       <NavigationBar />
@@ -66,13 +83,17 @@ export default function Page() {
 
       <div className={sty.containerProjeto}>
         <h2 className={sty.subtitleSobre}> PROJETOS </h2>
-        <Card isHoverable className="py-4">
+
+        
+        <Card isHoverable className="py-4 bg-default-200">
+          <CardHeader className="pb-0 pt-2 px-4 flex-col items-end gap-2">
+            <Chip color="danger">Privado</Chip>
+          </CardHeader>
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start gap-2">
-            <div className="items-end">
-          <Chip color="danger">Privado</Chip>
+            <div>
+              <h4 className="font-bold text-large">911</h4>
+              <small className="text-default-500">simples e animad</small>
             </div>
-          <h4 className="font-bold text-large">911</h4>
-            <small className="text-default-500">simples e animad</small>
           </CardHeader>
           <CardBody className="overflow-visible py-2">
             <Image
@@ -80,11 +101,48 @@ export default function Page() {
               className="object-cover rounded-xl"
               src="/img/911.png"
               width={1920}
+              isZoomed
             />
           </CardBody>
           <CardFooter className="flex justify-between items-center px-4 py-2">
 
-            <p> conheça mais sobre </p>
+            <Button onPress={() => handleOpen(onOpen)}> conhecer mais sobre  <lucide.ArrowRight /> </Button>
+            <Modal backdrop="blur" isOpen={isOpen} onClose={onClose}>
+              <ModalContent>
+                {(onClose) => (
+                  <>
+                    <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
+                    <ModalBody>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nullam pulvinar risus non risus hendrerit venenatis.
+                        Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                      </p>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nullam pulvinar risus non risus hendrerit venenatis.
+                        Pellentesque sit amet hendrerit risus, sed porttitor quam.
+                      </p>
+                      <p>
+                        Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
+                        dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis.
+                        Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod.
+                        Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur
+                        proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
+                      </p>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button color="danger" variant="light" onPress={onClose}>
+                        Close
+                      </Button>
+                      <Button color="primary" onPress={onClose}>
+                        Action
+                      </Button>
+                    </ModalFooter>
+                  </>
+                )}
+              </ModalContent>
+            </Modal>
           </CardFooter>
         </Card>
       </div>
