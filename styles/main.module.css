@@ -1,55 +1,69 @@
-.containerCenterFullFlex{
+.containerCenterFullFlex {
     display: flex;
-    height: 100vh;
+    height: 80vh;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 5rem;
 }
 
-.avatar{
+.avatar {
     width: 300px;
     height: 300px;
+    margin-bottom: 1rem;
 }
 
-.title{
-    font-size: 3rem;
+.title {
+    font-size: 2rem;
+    margin: 0 auto;
 }
 
-.subtitle{
+.button{
+    width: 50%;
+    margin-top: .5rem;
+}
+
+.subtitle {
     font-size: 1.5rem;
-    text-align: center;
+    text-align: start;
 }
 
-.containerSobre{
+.containerSobre {
     display: flex;
     flex-direction: column;
     width: 40%;
-    margin: 0rem auto; 
+    margin: 8rem auto;
 }
 
-.subtitleSobre{
+.containerSobreCard{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 8rem auto;
+
+}
+.subtitleSobre {
     font-size: 3rem;
     text-align: center;
     font-family: extrabold;
     text-transform: uppercase;
 }
 
-.textSobre{
+.textSobre {
     font-size: 1.5rem;
     text-align: center;
 }
 
-.containerStack{
+.containerStack {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.stack{
+.stack {
     width: 400px;
 }
 
-.lista{
+.lista {
     align-items: center;
     flex-direction: column;
     display: flex;
@@ -57,10 +71,21 @@
     text-align: center;
 }
 
-.containerProjeto{
+.containerProjeto {
     display: grid;
     width: 50%;
     align-items: center;
     justify-content: center;
-    margin: 0rem auto; 
+    margin: 0rem auto;
+}
+
+.card {
+    width: 300px;
+    height: 300px;
+    padding: 15px;
+    transition: all .3 ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
 }

@@ -1,151 +1,123 @@
-"use client"
+"use client";
 import NavigationBar from '@/components/nav';
 import {
   Avatar,
+  Button,
+  useDisclosure,
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
-  Image,
-  Button,
-  Chip,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  useDisclosure
-
+  Divider,
 } from "@nextui-org/react";
-import * as lucide from "lucide-react"
-import sty from "../styles/main.module.css"
+import sty from "../styles/main.module.css";
 import { useState } from 'react';
+import CardList from "../components/projects";
+import { LucideDot } from 'lucide-react';
 
+const buttonColor = "warning";
 
-const project = [
-  { img: "", title: "", desc: "", isPrivate: "", }
-]
+const cardsProjects = [
+  {
+    id: 1,
+    title: "Porsche Time",
+    description: "Simples projeto e divertido",
+    imageSrc: "/img/911.png",
+    isPrivate: false,
+    modalContent: "Detalhes do carro 911...",
+  }
+];
 
+interface CardsMe {
+  id: number;
+  title: string;
+  description: string[];
+}
+
+const cardsMe: CardsMe[] = [
+  {
+    id: 1,
+    title: "Habilidades",
+    description: ["WEB (HTML, CSS, JS)", "React (Next.js)", "Python", "Tailwind", "UI/UX", "Design", "Scrum"],
+  },
+  {
+    id: 2,
+    title: "Experiência",
+    description: ["Sócio & Desenvolvedor FrontEnd nowe", "Estágio na Mottasul (Jan 2024, Jul 2024)", "Freelance", ],
+  },
+  {
+    id: 3,
+    title: "Educação",
+    description: ["Ciência da computação, Unimetrocamp (Mar 2024 - Dez 2029)",],
+  },
+  {
+    id: 4,
+    title: "Programas",
+    description: ["Figma", "Powerbi", "Premiere", "Photoshop", "Github",],
+  },
+];
 
 export default function Page() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const [backdrop, setBackdrop] = useState('blur')
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [backdrop, setBackdrop] = useState('blur');
 
   const handleOpen = (backdrop: any) => {
-    setBackdrop(backdrop)
+    setBackdrop(backdrop);
     onOpen();
-  }
+  };
+
   return (
     <>
       <NavigationBar />
       <div className={sty.containerCenterFullFlex}>
-        <div>
-          <h1 className={sty.title} >Olá sou Geovani Orsoli</h1>
-          <h2 className={sty.subtitle}> um apaixonado entusiasta por Tecnologia. </h2>
+        <div className='grid gap-2'>
+          <h1 className={sty.title}>Olá, sou Geovani Orsoli</h1>
+          <h2 className="text-default-500 ml-1">um entusiasta por Desenvolvimento.</h2>
+          <Button size='sm' className={sty.button} variant='flat' color={buttonColor} radius='full'>Conhecer</Button>
         </div>
-        <Avatar src="/pic.png" className={sty.avatar} />
-      </div>
-
-      <div className='grid h-screen'>
-        <div className={sty.containerSobre}>
-          <h2 className={sty.subtitleSobre}> Sobre mim </h2>
-          <p className={sty.textSobre}> Lorem ipsum dolor,
-            sit amet consectetur adipisicing elit. Voluptas
-            molestias officia non, molestiae quia magni in
-            laudantium ipsam vero excepturi nemo incidunt
-            officiis libero quidem repellendus sint accusantium
-            voluptate? Voluptatibus. </p>
-        </div>
-
-        <div className={sty.containerSobre}>
-          <h2 className={sty.subtitleSobre}> Linguas que programo </h2>
-          <div className={sty.containerStack}>
-            <img className={sty.stack} src="https://skillicons.dev/icons?i=html,css,js,tailwind,next,nodejs,c,python" />
-          </div>
-        </div>
-
-        <div className={sty.containerSobre}>
-          <h2 className={sty.subtitleSobre}> Programas </h2>
-          <div className={sty.containerStack}>
-            <img className={sty.software} src="https://skillicons.dev/icons?i=ps,ae,premiere,figma" />
-          </div>
-        </div>
-
-        <div className={sty.containerSobre}>
-          <h2 className={sty.subtitleSobre}> Idiomas </h2>
-          <div className={sty.lista}>
-            <p className='flex items-center'>  <lucide.Dot />  Português Nativo </p>
-            <p className='flex items-center'>  <lucide.Dot />  Inglês Avançado <span className='text-danger text-small items-center ml-2'> Estudando* </span> </p>
-          </div>
+        <div className='grid mx-[500]'>
+          <Avatar src="/pic.png" className={sty.avatar} />
         </div>
       </div>
 
+      <div className={sty.containerSobre}>
+        <h2 className={sty.subtitleSobre}>Sobre mim</h2>
+        <p className={sty.textSobre}>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+          molestias officia non, molestiae quia magni in laudantium ipsam vero
+          excepturi nemo incidunt officiis libero quidem repellendus sint
+          accusantium voluptate? Voluptatibus.
+        </p>
+      </div>
+
+      <div className={sty.containerSobreCard}>
+        <h2 className={sty.subtitleSobre}>Habilidades e Experiência</h2>
+      <div className="flex items-center justify-center mb-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {cardsMe.map((card) => (
+          <Card key={card.id} isHoverable className={sty.card}>
+            <CardHeader className="flex gap-3">
+              <div className="flex flex-col">
+                <p className="font-bold text-large">{card.title}</p>
+              </div>
+            </CardHeader>
+            <CardBody className="flex-1 overflow-y-auto break-words">
+              <ul className='text-default-500'>
+                {card.description.map((description) => (
+                  <div className='flex'>
+                    <li className='flex' key={description}> <LucideDot/> {description}</li>
+                  </div>
+                ))}
+              </ul>
+            </CardBody>
+          </Card>
+        ))}
+      </div>
+</div>
 
       <div className={sty.containerProjeto}>
-        <h2 className={sty.subtitleSobre}> PROJETOS </h2>
+        <h2 className={sty.subtitleSobre}>PROJETOS</h2>
 
-        
-        <Card isHoverable className="py-4 bg-default-200">
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-end gap-2">
-            <Chip color="danger">Privado</Chip>
-          </CardHeader>
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start gap-2">
-            <div>
-              <h4 className="font-bold text-large">911</h4>
-              <small className="text-default-500">simples e animad</small>
-            </div>
-          </CardHeader>
-          <CardBody className="overflow-visible py-2">
-            <Image
-              alt="Card background"
-              className="object-cover rounded-xl"
-              src="/img/911.png"
-              width={1920}
-              isZoomed
-            />
-          </CardBody>
-          <CardFooter className="flex justify-between items-center px-4 py-2">
-
-            <Button onPress={() => handleOpen(onOpen)}> conhecer mais sobre  <lucide.ArrowRight /> </Button>
-            <Modal backdrop="blur" isOpen={isOpen} onClose={onClose}>
-              <ModalContent>
-                {(onClose) => (
-                  <>
-                    <ModalHeader className="flex flex-col gap-1">Modal Title</ModalHeader>
-                    <ModalBody>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam pulvinar risus non risus hendrerit venenatis.
-                        Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                      </p>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nullam pulvinar risus non risus hendrerit venenatis.
-                        Pellentesque sit amet hendrerit risus, sed porttitor quam.
-                      </p>
-                      <p>
-                        Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit
-                        dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis.
-                        Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod.
-                        Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur
-                        proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
-                      </p>
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button color="danger" variant="light" onPress={onClose}>
-                        Close
-                      </Button>
-                      <Button color="primary" onPress={onClose}>
-                        Action
-                      </Button>
-                    </ModalFooter>
-                  </>
-                )}
-              </ModalContent>
-            </Modal>
-          </CardFooter>
-        </Card>
+        <CardList cards={cardsProjects} />
       </div>
     </>
-  )
+  );
 }

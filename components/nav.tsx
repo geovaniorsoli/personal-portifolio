@@ -35,7 +35,7 @@ export default function NavigationBar() {
 
             <NavbarContent justify="end">
 
-                <Button as={Link} color="primary" href="#" variant="flat">
+                <Button as={Link} color="warning" href="#" variant="flat">
                     Contatos
                 </Button>
 
