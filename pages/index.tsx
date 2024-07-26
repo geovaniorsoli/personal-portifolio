@@ -1,5 +1,5 @@
-"use client";
-import NavigationBar from '@/components/nav';
+"use client"
+import NavigationBar from '@/components/nav'
 import {
   Avatar,
   Button,
@@ -8,13 +8,16 @@ import {
   CardHeader,
   CardBody,
   Divider,
-} from "@nextui-org/react";
-import sty from "../styles/main.module.css";
-import { useState } from 'react';
-import CardList from "../components/projects";
-import { LucideDot } from 'lucide-react';
+  Link,
+} from "@nextui-org/react"
+import sty from "../styles/main.module.css"
+import { useState } from 'react'
+import CardList from "../components/projects"
+import { LucideDot } from 'lucide-react'
+import Footer from '../components/footer'
+import { Spotlight } from '@/components/ui/spotlight'
 
-const buttonColor = "warning";
+const buttonColor = "warning"
 
 const cardsProjects = [
   {
@@ -22,15 +25,17 @@ const cardsProjects = [
     title: "Porsche Time",
     description: "Simples projeto e divertido",
     imageSrc: "/img/911.png",
-    isPrivate: false,
+    isPrivate: true,
     modalContent: "Detalhes do carro 911...",
+    privateName: "Público",
+    url: "http://its-porsche-time.vercel.app"
   }
-];
+]
 
 interface CardsMe {
-  id: number;
-  title: string;
-  description: string[];
+  id: number
+  title: string
+  description: string[]
 }
 
 const cardsMe: CardsMe[] = [
@@ -42,7 +47,7 @@ const cardsMe: CardsMe[] = [
   {
     id: 2,
     title: "Experiência",
-    description: ["Sócio & Desenvolvedor FrontEnd nowe", "Estágio na Mottasul (Jan 2024, Jul 2024)", "Freelance", ],
+    description: ["Sócio & Dev FrontEnd nowe", "Estágio Mottasul (Jan 24 - Jul 24)", "Freelance",],
   },
   {
     id: 3,
@@ -54,30 +59,26 @@ const cardsMe: CardsMe[] = [
     title: "Programas",
     description: ["Figma", "Powerbi", "Premiere", "Photoshop", "Github",],
   },
-];
+]
 
 export default function Page() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [backdrop, setBackdrop] = useState('blur');
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [backdrop, setBackdrop] = useState('blur')
 
   const handleOpen = (backdrop: any) => {
-    setBackdrop(backdrop);
-    onOpen();
-  };
+    setBackdrop(backdrop)
+    onOpen()
+  }
 
   return (
     <>
+    <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="dark"/>
       <NavigationBar />
-      <div className={sty.containerCenterFullFlex}>
-        <div className='grid gap-2'>
-          <h1 className={sty.title}>Olá, sou Geovani Orsoli</h1>
-          <h2 className="text-default-500 ml-1">um entusiasta por Desenvolvimento.</h2>
-          <Button size='sm' className={sty.button} variant='flat' color={buttonColor} radius='full'>Conhecer</Button>
-        </div>
-        <div className='grid mx-[500]'>
+        <div className="w-full h-screen flex flex-col items-center justify-center text-center px-4">
           <Avatar src="/pic.png" className={sty.avatar} />
+          <h1 className={sty.title}>Geovani Orsoli</h1>
+          <h2 className="text-lg text-default-500">um entusiasta por Desenvolvimento.</h2>
         </div>
-      </div>
 
       <div className={sty.containerSobre}>
         <h2 className={sty.subtitleSobre}>Sobre mim</h2>
@@ -91,33 +92,35 @@ export default function Page() {
 
       <div className={sty.containerSobreCard}>
         <h2 className={sty.subtitleSobre}>Habilidades e Experiência</h2>
-      <div className="flex items-center justify-center mb-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {cardsMe.map((card) => (
-          <Card key={card.id} isHoverable className={sty.card}>
-            <CardHeader className="flex gap-3">
-              <div className="flex flex-col">
-                <p className="font-bold text-large">{card.title}</p>
-              </div>
-            </CardHeader>
-            <CardBody className="flex-1 overflow-y-auto break-words">
-              <ul className='text-default-500'>
-                {card.description.map((description) => (
-                  <div className='flex'>
-                    <li className='flex' key={description}> <LucideDot/> {description}</li>
-                  </div>
-                ))}
-              </ul>
-            </CardBody>
-          </Card>
-        ))}
+        <div className="flex items-center justify-center mb-3 gap-4">
+          {cardsMe.map((card) => (
+            <Card key={card.id} isHoverable className={sty.card}>
+              <CardHeader className="flex gap-3">
+                <div className="flex flex-col">
+                  <p className="font-bold text-large">{card.title}</p>
+                </div>
+              </CardHeader>
+              <CardBody className="flex-1 overflow-y-auto break-words">
+                <ul className='text-default-500'>
+                  {card.description.map((description) => (
+                    <div className='flex'>
+                      <li className='flex' key={description}> <LucideDot /> {description}</li>
+                    </div>
+                  ))}
+                </ul>
+              </CardBody>
+            </Card>
+          ))}
+        </div>
       </div>
-</div>
-
       <div className={sty.containerProjeto}>
-        <h2 className={sty.subtitleSobre}>PROJETOS</h2>
-
+        <h2 className={sty.subtitleSobre}>Alguns dos meus PROJETOS</h2>
         <CardList cards={cardsProjects} />
       </div>
+      <div className='mt-3 flex items-center justify-center'>
+        <Button as={Link} href='/projetos' className={sty.button} variant='flat' color={buttonColor}>Ver todos os projetos</Button>
+      </div>
+      <Footer />
     </>
-  );
+  )
 }

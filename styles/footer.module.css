@@ -1,0 +1,16 @@
+.footerbody {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.linksContainer {
+    display: grid;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    margin: 1rem;
+}

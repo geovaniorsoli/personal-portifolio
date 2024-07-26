@@ -11,10 +11,10 @@ import {
     ModalBody,
     ModalFooter,
     Chip,
-    Image
+    Image,
+    Link
 } from '@nextui-org/react';
-
-import * as lucide from "lucide-react"
+import { ArrowRight } from 'lucide-react';
 
 interface CardData {
     id: number;
@@ -22,12 +22,15 @@ interface CardData {
     description: string;
     imageSrc: string;
     isPrivate: boolean;
+    privateName: string;
     modalContent: string;
+    url: string;
 }
 
 interface CardListProps {
     cards: CardData[];
 }
+
 
 const CardList: React.FC<CardListProps> = ({ cards }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +50,7 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
             {cards.map((card) => (
                 <Card key={card.id} isHoverable className="py-4 bg-default-200">
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-end gap-2">
-                        {card.isPrivate && <Chip color="danger">Privado</Chip>}
+                        <Chip variant='flat' color={card.isPrivate ? "success" : "danger"}>{card.privateName}</Chip>
                     </CardHeader>
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start gap-2">
                         <div>
@@ -56,17 +59,20 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
                         </div>
                     </CardHeader>
                     <CardBody className="overflow-visible py-2">
-                        <Image
-                            alt="Card background"
-                            className="object-cover rounded-xl"
-                            src={card.imageSrc}
-                            width={1920}
-                            isZoomed
-                        />
+                        <Link isExternal href={card.url}>
+                            <Image
+                                alt="Card background"
+                                className="object-cover rounded-xl"
+                                src={card.imageSrc}
+                                isZoomed
+                                width={1920}
+                                height={1080}
+                            />
+                        </Link>
                     </CardBody>
                     <CardFooter className="flex justify-between items-center px-4 py-2">
-                        <Button onPress={() => handleOpen(card)}>
-                            conhecer mais sobre <lucide.ArrowRight />
+                        <Button color="warning" variant='flat' onPress={() => handleOpen(card)}>
+                            conhecer mais sobre <ArrowRight />
                         </Button>
                     </CardFooter>
                 </Card>
