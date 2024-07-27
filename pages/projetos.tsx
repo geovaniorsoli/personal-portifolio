@@ -19,9 +19,9 @@ export default function projetos() {
             title: "Porsche Time",
             description: "Simples projeto e divertido",
             imageSrc: "/img/911.png",
-            isPrivate: true,
+            isPrivate: false,
             modalContent: "Detalhes do carro 911...",
-            privateName: "Público",
+            privateName: "Privado",
             url: "http://its-porsche-time.vercel.app"
         },
         {

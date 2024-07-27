@@ -30,7 +30,7 @@ const config = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui(), addVariablesForColors],
 };
 
 function addVariablesForColors({ addBase, theme }: any) {

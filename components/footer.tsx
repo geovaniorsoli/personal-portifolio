@@ -1,6 +1,4 @@
-import * as lucide from "lucide-react";
 import sty from "../styles/footer.module.css";
-import { Button, Link } from "@nextui-org/react";
 const phase = [
     {
         text: "Geovani Orsoli",
