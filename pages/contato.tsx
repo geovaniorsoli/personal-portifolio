@@ -34,7 +34,7 @@ const list: button[] = [
         color: "primary",
     },
     {
-        title: "Curriculum",
+        title: "Currículo",
         url: "https://docs.google.com/document/d/1nnljCgs-6u_tL711w67NUjOt4jQVmVH2jyN3xfTPrEE/edit?usp=sharing",
         icon: lucide.FileText,
         color: "success",

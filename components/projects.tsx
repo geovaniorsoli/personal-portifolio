@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import {
     Card,
     CardHeader,
@@ -12,38 +12,44 @@ import {
     ModalFooter,
     Chip,
     Image,
-    Link
-} from '@nextui-org/react';
-import { ArrowRight } from 'lucide-react';
+    Link,
+    Popover,
+    PopoverTrigger,
+    PopoverContent
+} from '@nextui-org/react'
+import { ArrowRight } from 'lucide-react'
 
 interface CardData {
-    id: number;
-    title: string;
-    description: string;
-    imageSrc: string;
-    isPrivate: boolean;
-    privateName: string;
-    modalContent: string;
-    url: string;
+    id: number
+    title: string
+    description: string
+    imageSrc: string
+    isPrivate: boolean
+    privateName: string
+    modalContent: string
+    url: string
+    githubUrl: string
+    githubPrivate: boolean
+    urlPrivate: boolean
 }
 
 interface CardListProps {
-    cards: CardData[];
+    cards: CardData[]
 }
 
 
 const CardList: React.FC<CardListProps> = ({ cards }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [currentCard, setCurrentCard] = useState<CardData | null>(null);
+    const [isOpen, setIsOpen] = useState(false)
+    const [currentCard, setCurrentCard] = useState<CardData | null>(null)
 
     const handleOpen = (card: CardData) => {
-        setCurrentCard(card);
-        setIsOpen(true);
-    };
+        setCurrentCard(card)
+        setIsOpen(true)
+    }
     const handleClose = () => {
-        setIsOpen(false);
-        setCurrentCard(null);
-    };
+        setIsOpen(false)
+        setCurrentCard(null)
+    }
 
     return (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -86,14 +92,23 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
                                 <ModalHeader className="flex flex-col gap-1">{currentCard.title}</ModalHeader>
                                 <ModalBody>
                                     <p>{currentCard.modalContent}</p>
+                                    <p className='text-default-500 text-small'> Acessar o projeto</p>
                                 </ModalBody>
                                 <ModalFooter>
-                                    <Button color="warning" variant="light" onPress={handleClose}>
-                                        Close
-                                    </Button>
-                                    <Button color="warning" onPress={handleClose}>
-                                        Action
-                                    </Button>
+                                    <Popover placement="right">
+                                        <PopoverTrigger>
+                                            <Button radius="full" color="warning" variant="flat">
+                                                Acessar o projeto
+                                            </Button>
+                                        </PopoverTrigger>
+                                        <PopoverContent>
+                                            <div className="px-1 py-2 grid">
+                                                <div className="text-small font-bold">Acesse os links</div>
+                                                <Link showAnchorIcon isExternal isDisabled={currentCard.githubPrivate} href={currentCard.githubUrl} className="text-tiny">Github</Link>
+                                                <Link showAnchorIcon isExternal isDisabled={currentCard.urlPrivate } href={currentCard.url} className="text-tiny">Page</Link>
+                                            </div>
+                                        </PopoverContent>
+                                    </Popover>
                                 </ModalFooter>
                             </>
                         )}
@@ -101,7 +116,7 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
                 </Modal>
             )}
         </div>
-    );
-};
+    )
+}
 
-export default CardList;
+export default CardList

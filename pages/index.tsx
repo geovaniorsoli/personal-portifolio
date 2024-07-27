@@ -106,7 +106,7 @@ export default function Page() {
                 <Link href='/Projetos' className="text-tiny">Sobre Mim</Link>
                 <Link href='/Projetos' className="text-tiny">Contato</Link>
                 <div className="text-tiny">Links</div>
-                <Link showAnchorIcon href={CurriculumLink} className="text-tiny">Curiculum</Link>
+                <Link showAnchorIcon href={CurriculumLink} className="text-tiny">Currículo</Link>
                 <Link href={githubLink} showAnchorIcon className="text-tiny">Github</Link>
                 <Link href={LinkedinLink} showAnchorIcon className="text-tiny">Linkedin</Link>
               </div>
@@ -160,7 +160,7 @@ export default function Page() {
         </div>
       </div>
       <div className={sty.containerProjeto}>
-        <h2 className={sty.subtitleSobre}>Alguns dos meus PROJETOS</h2>
+        <h2 className={sty.subtitleSobre}>Nowe company</h2>
         <CardList cards={cardsProjects} />
       </div>
       <div className='flex items-center justify-center py-4'>
