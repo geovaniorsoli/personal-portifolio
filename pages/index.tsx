@@ -26,13 +26,17 @@ const buttonColor = "warning"
 const cardsProjects = [
   {
     id: 1,
-    title: "Porsche Time",
-    description: "Simples projeto e divertido",
-    imageSrc: "/img/911.png",
-    isPrivate: true,
-    modalContent: "Detalhes do carro 911...",
-    privateName: "Público",
-    url: "http://its-porsche-time.vercel.app"
+    title: "Weon",
+    description: "Sistema GED customizável que gera dashboards.",
+    imageSrc: ["/img/weon2.png", "img/nowepage.png"],
+    isPrivate: false,
+    modalContent:["Um sistema do tipo GED (GERENCIAMENTO ELETRONICO DE DOCUMENTOS) com o diferencial de ser customizável pelo cliente, com facilidade é possivel criar tabelas e gerenciar dados, além disso é possivel visualizar dados em dashboards."], 
+    stack: ["TS", "JS", "NEXT.JS", "ShadcnUI", "Dockers", "MongoBD", "AWS"],
+    privateName: "Privado",
+    url: "http://its-porsche-time.vercel.app",
+    githubUrl: "https://github.com/nowecompany",
+    githubPrivate: true,
+    urlPrivate: true
   }
 ]
 
@@ -160,9 +164,15 @@ export default function Page() {
         </div>
       </div>
       <div className={sty.containerProjeto}>
+        <p className='align-center flex justify-center'> <lucide.Crown className='text-default-500'/> </p>
         <h2 className={sty.subtitleSobre}>Nowe company</h2>
+        <h2 className='align-center flex justify-center text-default-500'>
+          Um Projeto de TCC que virou realidade.
+        </h2>
         <CardList cards={cardsProjects} />
       </div>
+
+
       <div className='flex items-center justify-center py-4'>
           <Button radius='full' className='mt-3' as={Link} isExternal variant='flat' color='warning' href={CurriculumLink}>
             Ver todos Projetos

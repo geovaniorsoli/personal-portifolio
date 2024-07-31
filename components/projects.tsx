@@ -15,18 +15,31 @@ import {
     Link,
     Popover,
     PopoverTrigger,
-    PopoverContent
+    PopoverContent,
+    Accordion,
+    AccordionItem
 } from '@nextui-org/react'
-import { ArrowRight } from 'lucide-react'
+
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
+
+import { ArrowRight, Github, Dot, Text } from 'lucide-react'
+
 
 interface CardData {
     id: number
     title: string
     description: string
-    imageSrc: string
+    imageSrc: string[]
     isPrivate: boolean
     privateName: string
-    modalContent: string
+    modalContent: string[]
+    stack: string[]
     url: string
     githubUrl: string
     githubPrivate: boolean
@@ -60,62 +73,92 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
                     </CardHeader>
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start gap-2">
                         <div>
-                            <h4 className="font-bold text-large">{card.title}</h4>
+                            <h4 className="font-bold text-xl">{card.title}</h4>
                             <small className="text-default-500">{card.description}</small>
                         </div>
                     </CardHeader>
                     <CardBody className="overflow-visible py-2">
-                        <Link isExternal href={card.url}>
-                            <Image
-                                alt="Card background"
-                                className="object-cover rounded-xl"
-                                src={card.imageSrc}
-                                isZoomed
-                                width={1920}
-                                height={1080}
-                            />
-                        </Link>
+                        
+                            <Carousel>
+                                <CarouselContent>
+                                    {card.imageSrc.map((src, index) => (
+                                        <CarouselItem key={index}>
+                                            <Image
+                                                alt="Card background"
+                                                className="object-cover rounded-xl"
+                                                src={src}
+                                                isZoomed
+                                                width={900}
+                                                height={900}
+                                            />
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                                    <CarouselPrevious />
+                                <CarouselNext />
+                            </Carousel>
                     </CardBody>
                     <CardFooter className="flex justify-between items-center px-4 py-2">
                         <Button color="warning" variant='flat' onPress={() => handleOpen(card)}>
                             conhecer mais sobre <ArrowRight />
                         </Button>
+                        <div className="flex gap-1 space-x-2">
+                            <Button as={Link} isExternal isDisabled={card.githubPrivate} isIconOnly color="default" variant='flat' onPress={() => handleOpen(card)}>
+                                <Github />
+                            </Button>
+                            <Button as={Link} isIconOnly isDisabled={card.urlPrivate} color="primary" variant='flat' onPress={() => handleOpen(card)}>
+                                <Text />
+                            </Button>
+                        </div>
                     </CardFooter>
                 </Card>
-            ))}
+            ))
+            }
 
-            {currentCard && (
-                <Modal backdrop="blur" isOpen={isOpen} onClose={handleClose}>
-                    <ModalContent>
-                        {() => (
-                            <>
-                                <ModalHeader className="flex flex-col gap-1">{currentCard.title}</ModalHeader>
-                                <ModalBody>
-                                    <p>{currentCard.modalContent}</p>
-                                    <p className='text-default-500 text-small'> Acessar o projeto</p>
-                                </ModalBody>
-                                <ModalFooter>
-                                    <Popover placement="right">
-                                        <PopoverTrigger>
-                                            <Button radius="full" color="warning" variant="flat">
-                                                Acessar o projeto
-                                            </Button>
-                                        </PopoverTrigger>
-                                        <PopoverContent>
-                                            <div className="px-1 py-2 grid">
-                                                <div className="text-small font-bold">Acesse os links</div>
-                                                <Link showAnchorIcon isExternal isDisabled={currentCard.githubPrivate} href={currentCard.githubUrl} className="text-tiny">Github</Link>
-                                                <Link showAnchorIcon isExternal isDisabled={currentCard.urlPrivate } href={currentCard.url} className="text-tiny">Page</Link>
-                                            </div>
-                                        </PopoverContent>
-                                    </Popover>
-                                </ModalFooter>
-                            </>
-                        )}
-                    </ModalContent>
-                </Modal>
-            )}
-        </div>
+            {
+                currentCard && (
+                    <Modal backdrop="blur" isOpen={isOpen} onClose={handleClose}>
+                        <ModalContent>
+                            {() => (
+                                <>
+                                    <ModalHeader className="flex flex-col gap-1">{currentCard.title}</ModalHeader>
+                                    <ModalBody>
+                                        {currentCard.modalContent}
+                                        <Accordion>
+                                            <AccordionItem key="1" aria-label="Stack" title="Stack">
+                                                <ul>
+                                                    {currentCard.stack.map((item, index) => (
+                                                        <li className='text-small flex' key={index}>
+                                                            <Dot /> {item}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </AccordionItem>
+                                        </Accordion>
+                                    </ModalBody>
+                                    <ModalFooter>
+                                        <Popover placement="right">
+                                            <PopoverTrigger>
+                                                <Button radius="full" color="warning" variant="flat">
+                                                    Acessar o projeto
+                                                </Button>
+                                            </PopoverTrigger>
+                                            <PopoverContent>
+                                                <div className="px-1 py-2 grid">
+                                                    <div className="text-small font-bold">Acesse os links</div>
+                                                    <Link showAnchorIcon isExternal isDisabled={currentCard.githubPrivate} href={currentCard.githubUrl} className="text-tiny">Github</Link>
+                                                    <Link showAnchorIcon isExternal isDisabled={currentCard.urlPrivate} href={currentCard.url} className="text-tiny">Page</Link>
+                                                </div>
+                                            </PopoverContent>
+                                        </Popover>
+                                    </ModalFooter>
+                                </>
+                            )}
+                        </ModalContent>
+                    </Modal>
+                )
+            }
+        </div >
     )
 }
 
