@@ -95,7 +95,7 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
                                     ))}
                                 </CarouselContent>
                                     <CarouselPrevious />
-                                <CarouselNext />
+                                <CarouselNext className="carroselIcon" />
                             </Carousel>
                     </CardBody>
                     <CardFooter className="flex justify-between items-center px-4 py-2">

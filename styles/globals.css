@@ -24,7 +24,9 @@
 }
 
 
-
+.carroselIcon{
+  margin-left: 52rem;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
