@@ -1,4 +1,5 @@
 "use client"
+import { useEffect, useState } from "react";
 import NavigationBar from '@/components/nav'
 import {
   Avatar,
@@ -14,21 +15,21 @@ import {
   PopoverContent,
 } from "@nextui-org/react"
 import sty from "../styles/main.module.css"
-import React, { useState } from 'react'
 import CardList from "../components/projects"
 import * as lucide from "lucide-react"
 import Footer from '../components/footer'
 import FlipWords from '@/components/ui/flipWords'
 import TextGenerateEffect from '@/components/ui/textEffect'
+import GradualSpacing from "@/components/ui/gradualText";
 
 const cardsProjects = [
   {
     id: 1,
     title: "Weon",
     description: "Sistema GED customizável que gera dashboards.",
-    imageSrc: ["/img/weon1.png", "/img/weon2.png","/img/weon3.png",],
+    imageSrc: ["/img/weon1.png", "/img/weon2.png", "/img/weon3.png",],
     isPrivate: false,
-    modalContent:["Um sistema do tipo GED (GERENCIAMENTO ELETRONICO DE DOCUMENTOS) com o diferencial de ser customizável pelo cliente, com facilidade é possivel criar tabelas e gerenciar dados, além disso é possivel visualizar dados em dashboards."], 
+    modalContent: ["Um sistema do tipo GED (GERENCIAMENTO ELETRONICO DE DOCUMENTOS) com o diferencial de ser customizável pelo cliente, com facilidade é possivel criar tabelas e gerenciar dados, além disso é possivel visualizar dados em dashboards."],
     stack: ["TS", "JS", "NEXT.JS", "ShadcnUI", "Dockers", "MongoBD", "AWS"],
     privateName: "Privado, em progresso",
     url: "http://its-porsche-time.vercel.app",
@@ -116,7 +117,7 @@ export default function Page() {
             </div>
           </PopoverContent>
         </Popover>
-        <h1 className={sty.title}>Geovani Orsoli</h1>
+        <GradualSpacing className={sty.title} text="GeovaniOrsoli" />
         <div className='flex items-center justify-center text-center'>
           <h2 className="text-lg text-default-500">um entusiasta por</h2>
           <div>
@@ -135,7 +136,7 @@ export default function Page() {
         <h2 className={sty.subtitleSobre}>Habilidades e Experiência</h2>
         <div className={sty.containerCard}>
           {cardsMe.map((card) => (
-            <Card key={card.id}  className={sty.card}>
+            <Card key={card.id} className={sty.card}>
               <CardHeader className="flex justify-between gap-3">
                 <div className="flex flex-col">
                   <p className="font-bold text-large">{card.title}</p>
@@ -163,20 +164,20 @@ export default function Page() {
         </div>
       </div>
       <div className={sty.containerProjeto}>
-        <p className='align-center flex justify-center'> <lucide.Crown className='text-default-500'/> </p>
+        <p className='align-center flex justify-center'> <lucide.Crown className='text-default-500' /> </p>
         <h2 className={sty.subtitleSobre}>Nowe company</h2>
         <div className='margin'>
-        <h2 className='align-center flex justify-center text-default-500'>
-          Um Projeto de TCC que virou realidade.
-        </h2>
+          <h2 className='align-center flex justify-center text-default-500'>
+            Um Projeto de TCC que virou realidade.
+          </h2>
         </div>
         <CardList cards={cardsProjects} />
       </div>
       <div className='flex items-center justify-center py-4'>
-          <Button radius='full' className='mt-3' as={Link} variant='flat' color='warning' href="/projetos">
-            Ver todos Projetos
-          </Button>
-        </div>
+        <Button radius='full' className='mt-3' as={Link} variant='flat' color='warning' href="/projetos">
+          Ver todos Projetos
+        </Button>
+      </div>
       <Footer />
     </>
   )
