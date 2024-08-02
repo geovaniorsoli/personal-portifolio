@@ -97,10 +97,8 @@
 
 .containerProjeto {
     display: grid;
-    width: 50%;
     align-items: center;
     justify-content: center;
-    margin: 0rem auto;
 }
 
 .card {

@@ -17,7 +17,8 @@ import {
     PopoverTrigger,
     PopoverContent,
     Accordion,
-    AccordionItem
+    AccordionItem,
+    Tooltip
 } from '@nextui-org/react'
 
 import {
@@ -67,7 +68,7 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
     return (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {cards.map((card) => (
-                <Card key={card.id} isHoverable className="py-4 bg-default-200">
+                <Card key={card.id} isHoverable className="card">
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-end gap-2">
                         <Chip variant='flat' color={card.isPrivate ? "success" : "danger"}>{card.privateName}</Chip>
                     </CardHeader>
@@ -78,37 +79,41 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
                         </div>
                     </CardHeader>
                     <CardBody className="overflow-visible py-2">
-                        
-                            <Carousel>
-                                <CarouselContent>
-                                    {card.imageSrc.map((src, index) => (
-                                        <CarouselItem key={index}>
-                                            <Image
-                                                alt="Card background"
-                                                className="object-cover rounded-xl"
-                                                src={src}
-                                                isZoomed
-                                                width={900}
-                                                height={900}
-                                            />
-                                        </CarouselItem>
-                                    ))}
-                                </CarouselContent>
-                                    <CarouselPrevious />
-                                <CarouselNext className="carroselIcon" />
-                            </Carousel>
+
+                        <Carousel>
+                            <CarouselContent>
+                                {card.imageSrc.map((src, index) => (
+                                    <CarouselItem key={index}>
+                                        <Image
+                                            alt="Card background"
+                                            className="object-cover rounded-xl"
+                                            src={src}
+                                            width={800}
+                                            height={500}
+                                            isZoomed
+                                        />
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious />
+                            <CarouselNext className="carroselIcon" />
+                        </Carousel>
                     </CardBody>
                     <CardFooter className="flex justify-between items-center px-4 py-2">
                         <Button color="warning" variant='flat' onPress={() => handleOpen(card)}>
                             conhecer mais sobre <ArrowRight />
                         </Button>
                         <div className="flex gap-1 space-x-2">
-                            <Button as={Link} isExternal isDisabled={card.githubPrivate} isIconOnly color="default" variant='flat' onPress={() => handleOpen(card)}>
-                                <Github />
-                            </Button>
-                            <Button as={Link} isIconOnly isDisabled={card.urlPrivate} color="primary" variant='flat' onPress={() => handleOpen(card)}>
-                                <Text />
-                            </Button>
+                            <Tooltip color='default' placement='bottom' content="Github">
+                                <Button as={Link} href={card.githubUrl} isExternal isDisabled={card.githubPrivate} isIconOnly color="default" variant='flat'>
+                                    <Github />
+                                </Button>
+                            </Tooltip>
+                            <Tooltip color='primary' placement='bottom' content="Page">
+                                <Button as={Link} href={card.githubUrl} isIconOnly isDisabled={card.urlPrivate} color="primary" variant='flat'>
+                                    <Text />
+                                </Button>
+                            </Tooltip>
                         </div>
                     </CardFooter>
                 </Card>

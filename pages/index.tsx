@@ -21,21 +21,19 @@ import Footer from '../components/footer'
 import FlipWords from '@/components/ui/flipWords'
 import TextGenerateEffect from '@/components/ui/textEffect'
 
-const buttonColor = "warning"
-
 const cardsProjects = [
   {
     id: 1,
     title: "Weon",
     description: "Sistema GED customizável que gera dashboards.",
-    imageSrc: ["/img/weon2.png", "img/nowepage.png"],
+    imageSrc: ["/img/weon1.png", "/img/weon2.png","/img/weon3.png",],
     isPrivate: false,
     modalContent:["Um sistema do tipo GED (GERENCIAMENTO ELETRONICO DE DOCUMENTOS) com o diferencial de ser customizável pelo cliente, com facilidade é possivel criar tabelas e gerenciar dados, além disso é possivel visualizar dados em dashboards."], 
     stack: ["TS", "JS", "NEXT.JS", "ShadcnUI", "Dockers", "MongoBD", "AWS"],
-    privateName: "Privado",
+    privateName: "Privado, Em progresso",
     url: "http://its-porsche-time.vercel.app",
     githubUrl: "https://github.com/nowecompany",
-    githubPrivate: true,
+    githubPrivate: false,
     urlPrivate: true
   }
 ]
@@ -64,19 +62,20 @@ const cardsMe: CardsMe[] = [
     icon: lucide.Book,
     id: 3,
     title: "Educação",
-    description: ["Ciência da computação, Unimetrocamp (Mar 2024 - Dez 2029)",],
+    description: ["Ciência da computação, Unimetrocamp (Mar 2024 - Dez 2029)", "Inglês avançado"],
   },
   {
     icon: lucide.Code,
     id: 4,
     title: "Programas",
-    description: ["Figma", "Powerbi", "Premiere", "Photoshop", "Github",],
+    description: ["Figma", "Powerbi", "Premiere", "AfterEffects", "Photoshop", "Github",],
   },
+
 ]
 
 const words = ["Tecnologia.", "Programação.", "UI/UX.", "Design.", "IA.", "Interfaces."]
 
-const sobreMim = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti beatae molestias animi nihil. Magnam, neque?"
+const sobreMim = "Me chamo Geovani Orsoli, sou de São Paulo, tenho 18 anos e estou cursando ciência da computação. Desde sempre gostei de programar e produzir conteúdo audio-visual, Sou cativado por programação desde quando a conheci, procuro sempre estudar coisas nova, tudo pode ser alcançado com paciência e estudo."
 
 const githubLink = "https://github.com/GeovaniOrsoli"
 const LinkedinLink = "https://www.linkedin.com/in/geovani-orsoli/"
@@ -174,7 +173,7 @@ export default function Page() {
 
 
       <div className='flex items-center justify-center py-4'>
-          <Button radius='full' className='mt-3' as={Link} isExternal variant='flat' color='warning' href={CurriculumLink}>
+          <Button radius='full' className='mt-3' as={Link} variant='flat' color='warning' href="/projetos">
             Ver todos Projetos
           </Button>
         </div>
