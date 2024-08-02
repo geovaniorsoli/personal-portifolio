@@ -79,7 +79,7 @@ export default function projetos() {
             id: 6,
             title: "Elojob Valorant Site",
             description: "Um site desenovolvido para calcular preço de serviço no valorant.",
-            imageSrc: ["/img/valorant1.png", "/img/valorant2.png","/img/valorant3.png","/img/valorant4.png",],
+            imageSrc: ["/img/valorant1.png", "/img/valorant2.png", "/img/valorant3.png", "/img/valorant4.png",],
             isPrivate: false,
             modalContent: ["Da necessidade sempre calcular na mão e divulgar o trabalho de forma informal, fui contratado para desenvolver um site que divulgasse o serviço e ainda tivesse uma calculadora para mostrar o resultado final do serviço escolhido e depois enviasse para o Whatsapp um resumo do pedido."],
             stack: ["Next.JS", "NextUI"],
@@ -100,9 +100,12 @@ export default function projetos() {
                 <h2 className={sty.masterTitle}>PROJETOS</h2>
             </div>
             <div className={sty.containerProjeto}>
+                <h3 className="text-small text-default-500"> Deslise para o lado para ver mais fotos dos projetos</h3>
+            </div>
+            <div className={sty.containerProjeto}>
                 <CardList cards={cardsProjects} />
             </div>
-            <Footer/>
+            <Footer />
         </>
     )
 }

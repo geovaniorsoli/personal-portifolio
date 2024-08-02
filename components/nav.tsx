@@ -17,8 +17,7 @@ export default function NavigationBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
-        { text: "Home", href: "/", showAnchor: false },
-        { text: "Sobre", href: "/", showAnchor: false },
+        { text: "Sobre Mim", href: "/", showAnchor: false },
         { text: "Projetos", href: "/projetos", showAnchor: false },
         { text: "Contato", href: "/contato", showAnchor: false },
         { text: "Github", href: "https://github.com/GeovaniOrsoli", showAnchor: true, isExternal: true },

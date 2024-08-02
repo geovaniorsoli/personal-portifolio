@@ -133,9 +133,9 @@ export default function Page() {
 
       <div className={sty.containerSobreCard}>
         <h2 className={sty.subtitleSobre}>Habilidades e Experiência</h2>
-        <div className="flex items-center justify-center mb-3 gap-4">
+        <div className={sty.containerCard}>
           {cardsMe.map((card) => (
-            <Card key={card.id} isHoverable className={sty.card}>
+            <Card key={card.id}  className={sty.card}>
               <CardHeader className="flex justify-between gap-3">
                 <div className="flex flex-col">
                   <p className="font-bold text-large">{card.title}</p>
@@ -170,8 +170,6 @@ export default function Page() {
         </h2>
         <CardList cards={cardsProjects} />
       </div>
-
-
       <div className='flex items-center justify-center py-4'>
           <Button radius='full' className='mt-3' as={Link} variant='flat' color='warning' href="/projetos">
             Ver todos Projetos

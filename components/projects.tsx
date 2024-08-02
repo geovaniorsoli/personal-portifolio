@@ -31,7 +31,6 @@ import {
 
 import { ArrowRight, Github, Dot, Text } from 'lucide-react'
 
-
 interface CardData {
     id: number
     title: string
@@ -79,24 +78,19 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
                         </div>
                     </CardHeader>
                     <CardBody className="overflow-visible py-2">
-
                         <Carousel>
                             <CarouselContent>
                                 {card.imageSrc.map((src, index) => (
                                     <CarouselItem key={index}>
                                         <Image
                                             alt="Card background"
-                                            className="object-cover rounded-xl"
+                                            className="img"
                                             src={src}
-                                            width={800}
-                                            height={500}
                                             isZoomed
                                         />
                                     </CarouselItem>
                                 ))}
                             </CarouselContent>
-                            <CarouselPrevious />
-                            <CarouselNext className="carroselIcon" />
                         </Carousel>
                     </CardBody>
                     <CardFooter className="flex justify-between items-center px-4 py-2">

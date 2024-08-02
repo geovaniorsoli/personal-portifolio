@@ -86,7 +86,7 @@ export default function Contato() {
             </div>
 
 
-            <div className={sty.container}>
+            <div className={sty.containerButton}>
                 {list.map((item, index) => (
                     <Tooltip showArrow={true} color={item.color} content={item.title} placement="bottom">
                             <Button className={sty.button} key={index} variant="flat" color={item.color} isIconOnly>

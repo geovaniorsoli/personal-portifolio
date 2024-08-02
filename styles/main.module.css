@@ -16,9 +16,9 @@
 }
 
 .title {
-    font-size: 10rem;
+    font-size: 5rem;
     line-height: 1;
-    letter-spacing: -10px;
+    letter-spacing: -4px;
     font-family: extrabold;
     text-transform: uppercase;
     background: linear-gradient(to left, #4b4b4b, #000000);
@@ -27,7 +27,7 @@
     background-clip: text;
 }
 
-.masterTitle{
+.masterTitle {
     font-size: 15rem;
     margin: 0 auto;
     font-family: extrabold;
@@ -41,7 +41,7 @@
     background-clip: text;
 }
 
-.button{
+.button {
     width: 50%;
     margin-top: .5rem;
 }
@@ -58,13 +58,13 @@
     margin: 8rem auto;
 }
 
-.containerSobreCard{
+.containerSobreCard {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 80%;
     margin: 8rem auto;
-
 }
+
 .subtitleSobre {
     font-size: 3rem;
     text-align: center;
@@ -77,14 +77,12 @@
     text-align: center;
 }
 
-.containerStack {
+.containerCard {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    gap: 1rem;
     justify-content: center;
-}
-
-.stack {
-    width: 400px;
 }
 
 .lista {
@@ -121,7 +119,36 @@
     justify-content: space-between;
 }
 
-.warningColor{
+.warningColor {
     color: #f5a524;
     font-size: 1.125rem;
+}
+
+@media (max-width:600px) {
+    .title {
+        font-size: 5rem;
+        line-height: .8;
+        letter-spacing: -6px;
+        margin-bottom: 1rem;
+    }
+
+    .avatar {
+        margin-top: -100px;
+    }
+
+    .containerSobre {
+        width: 90%;
+        margin: 3rem auto;
+    }
+
+    .containerSobreCard {
+        display: flex;
+        width: 90%;
+    }
+
+    .masterTitle {
+        font-size: 5rem;
+        letter-spacing: -3px;
+        margin-bottom: 1rem;
+    }
 }
