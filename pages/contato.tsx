@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import NavigationBar from "@/components/nav";
 import Footer from "@/components/footer";
 import {
@@ -13,14 +14,14 @@ import {
 import sty from "@/styles/contato.module.css";
 import * as lucide from "lucide-react";
 
-interface button {
-    title: string,
-    url: string,
-    icon: React.ElementType,
-    color: "default" | "primary" | "success" | "danger",
+interface ButtonProps {
+    title: string;
+    url: string;
+    icon: React.ElementType;
+    color: "default" | "primary" | "success" | "danger";
 }
 
-const list: button[] = [
+const list: ButtonProps[] = [
     {
         title: "GitHub",
         url: "https://github.com/GeovaniOrsoli",
@@ -48,6 +49,15 @@ const list: button[] = [
 ];
 
 export default function Contato() {
+    const [nome, setNome] = useState('');
+    const [email, setEmail] = useState('');
+    const [text, setText] = useState('');
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+    useEffect(() => {
+        setIsButtonDisabled(!nome || !email || !text);
+    }, [nome, email, text]);
+
     return (
         <>
             <NavigationBar />
@@ -61,22 +71,51 @@ export default function Contato() {
                         <h2 className="text-2xl text-default-500 font-semibold">Entre em contato</h2>
                     </CardHeader>
                     <CardBody>
-                        <form>
+                        <form action="https://formspree.io/f/mjvqzowo" method="POST">
                             <div className={sty.inputGroup}>
-                                <Input label="Seu nome" isRequired fullWidth startContent={
-                                    <lucide.User className="text-default-500" size={20} />
-                                } />
+                                <Input
+                                    id='nome'
+                                    name='nome'
+                                    label="Seu nome"
+                                    isRequired
+                                    fullWidth
+                                    startContent={<lucide.User className="text-default-500" size={20} />}
+                                    value={nome}
+                                    onChange={(e) => setNome(e.target.value)}
+                                />
                             </div>
                             <div className={sty.inputGroup}>
-                                <Input type="email" label="Seu melhor email" isRequired fullWidth startContent={
-                                    <lucide.Mail className="text-default-500" size={20} />
-                                } />
+                                <Input
+                                    id='email'
+                                    name='email'
+                                    type="email"
+                                    label="Seu melhor email"
+                                    isRequired
+                                    fullWidth
+                                    startContent={<lucide.Mail className="text-default-500" size={20} />}
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
                             </div>
                             <div className={sty.inputGroup}>
-                                <Textarea label="Envie uma mensagem" isRequired maxLength={56} fullWidth />
+                                <Textarea
+                                    id='msg'
+                                    name='msg'
+                                    label="Envie uma mensagem"
+                                    isRequired
+                                    maxLength={56}
+                                    fullWidth 
+                                    onChange={(e) => setText(e.target.value)}
+                                    />
                             </div>
                             <div className={sty.inputGroup}>
-                                <Button type="submit" color="warning" variant="flat" className="w-full">
+                                <Button
+                                    type="submit"
+                                    color="warning"
+                                    variant="flat"
+                                    className="w-full"
+                                    isDisabled={isButtonDisabled}
+                                >
                                     Entrar em contato
                                 </Button>
                             </div>
@@ -85,13 +124,12 @@ export default function Contato() {
                 </Card>
             </div>
 
-
             <div className={sty.containerButton}>
                 {list.map((item, index) => (
-                    <Tooltip showArrow={true} color={item.color} content={item.title} placement="bottom">
-                            <Button className={sty.button} key={index} variant="flat" color={item.color} isIconOnly>
-                                <item.icon className="w-24 w-24"/>
-                            </Button>
+                    <Tooltip key={index} showArrow={true} color={item.color} content={item.title} placement="bottom">
+                        <Button className={sty.button} variant="flat" color={item.color} isIconOnly>
+                            <item.icon className="w-24 w-24" />
+                        </Button>
                     </Tooltip>
                 ))}
             </div>

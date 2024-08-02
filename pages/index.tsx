@@ -20,7 +20,6 @@ import * as lucide from "lucide-react"
 import Footer from '../components/footer'
 import FlipWords from '@/components/ui/flipWords'
 import TextGenerateEffect from '@/components/ui/textEffect'
-import GradualSpacing from "@/components/ui/gradualText";
 
 const cardsProjects = [
   {
@@ -117,7 +116,7 @@ export default function Page() {
             </div>
           </PopoverContent>
         </Popover>
-        <GradualSpacing className={sty.title} text="GeovaniOrsoli" />
+        <h1 className={sty.title}>Geovani Orsoli</h1>
         <div className='flex items-center justify-center text-center'>
           <h2 className="text-lg text-default-500">um entusiasta por</h2>
           <div>
