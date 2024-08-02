@@ -25,8 +25,6 @@ import {
     Carousel,
     CarouselContent,
     CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
 } from "@/components/ui/carousel"
 
 import { ArrowRight, Github, Dot, Text, Regex } from 'lucide-react'
