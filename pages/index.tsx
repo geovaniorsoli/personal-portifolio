@@ -20,7 +20,6 @@ import * as lucide from "lucide-react"
 import Footer from '../components/footer'
 import FlipWords from '@/components/ui/flipWords'
 import TextGenerateEffect from '@/components/ui/textEffect'
-import { ThemeSwitcher } from "@/components/switch";
 
 const cardsProjects = [
   {
