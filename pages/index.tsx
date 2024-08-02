@@ -95,8 +95,6 @@ export default function Page() {
 
     <>
       <NavigationBar />
-
-      <ThemeSwitcher />
       <div className="w-full h-screen flex flex-col items-center justify-center text-center px-4">
         <Popover showArrow={true} placement="top">
           <PopoverTrigger>
