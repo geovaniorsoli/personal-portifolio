@@ -20,6 +20,7 @@ import * as lucide from "lucide-react"
 import Footer from '../components/footer'
 import FlipWords from '@/components/ui/flipWords'
 import TextGenerateEffect from '@/components/ui/textEffect'
+import { ThemeSwitcher } from "@/components/switch";
 
 const cardsProjects = [
   {
@@ -94,6 +95,8 @@ export default function Page() {
 
     <>
       <NavigationBar />
+
+      <ThemeSwitcher />
       <div className="w-full h-screen flex flex-col items-center justify-center text-center px-4">
         <Popover showArrow={true} placement="top">
           <PopoverTrigger>
