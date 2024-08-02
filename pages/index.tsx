@@ -30,7 +30,7 @@ const cardsProjects = [
     isPrivate: false,
     modalContent:["Um sistema do tipo GED (GERENCIAMENTO ELETRONICO DE DOCUMENTOS) com o diferencial de ser customizável pelo cliente, com facilidade é possivel criar tabelas e gerenciar dados, além disso é possivel visualizar dados em dashboards."], 
     stack: ["TS", "JS", "NEXT.JS", "ShadcnUI", "Dockers", "MongoBD", "AWS"],
-    privateName: "Privado, Em progresso",
+    privateName: "Privado, em progresso",
     url: "http://its-porsche-time.vercel.app",
     githubUrl: "https://github.com/nowecompany",
     githubPrivate: false,
@@ -165,9 +165,11 @@ export default function Page() {
       <div className={sty.containerProjeto}>
         <p className='align-center flex justify-center'> <lucide.Crown className='text-default-500'/> </p>
         <h2 className={sty.subtitleSobre}>Nowe company</h2>
+        <div className='margin'>
         <h2 className='align-center flex justify-center text-default-500'>
           Um Projeto de TCC que virou realidade.
         </h2>
+        </div>
         <CardList cards={cardsProjects} />
       </div>
       <div className='flex items-center justify-center py-4'>

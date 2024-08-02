@@ -17,7 +17,7 @@ export default function NavigationBar() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
-        { text: "Sobre Mim", href: "/", showAnchor: false },
+        { text: "Sobre", href: "/", showAnchor: false },
         { text: "Projetos", href: "/projetos", showAnchor: false },
         { text: "Contato", href: "/contato", showAnchor: false },
         { text: "Github", href: "https://github.com/GeovaniOrsoli", showAnchor: true, isExternal: true },
@@ -44,7 +44,7 @@ export default function NavigationBar() {
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <Link
-                        color="warning"
+                        color="foreground"
                             isExternal={item.isExternal}
                             isDisabled={item.isdisable}
                             className={sty.navItemLink}

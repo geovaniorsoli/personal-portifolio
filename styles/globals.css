@@ -37,6 +37,10 @@
   cursor: grab;
 }
 
+.margin{
+  margin-bottom: 1rem;
+}
+
 @media (max-width:600px) {
   .img {
     max-width: 360px; 

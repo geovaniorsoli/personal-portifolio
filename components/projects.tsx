@@ -29,7 +29,7 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 
-import { ArrowRight, Github, Dot, Text } from 'lucide-react'
+import { ArrowRight, Github, Dot, Text, Regex } from 'lucide-react'
 
 interface CardData {
     id: number
@@ -94,16 +94,17 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
                         </Carousel>
                     </CardBody>
                     <CardFooter className="flex justify-between items-center px-4 py-2">
-                        <Button color="warning" variant='flat' onPress={() => handleOpen(card)}>
-                            conhecer mais sobre <ArrowRight />
+                        <Button color="warning" radius='full' variant='flat' onPress={() => handleOpen(card)}>
+                            Mais detalhes
+                            
                         </Button>
                         <div className="flex gap-1 space-x-2">
-                            <Tooltip color='default' placement='bottom' content="Github">
+                            <Tooltip radius='full' color='default' placement='bottom' content="Github">
                                 <Button as={Link} href={card.githubUrl} isExternal isDisabled={card.githubPrivate} isIconOnly color="default" variant='flat'>
                                     <Github />
                                 </Button>
                             </Tooltip>
-                            <Tooltip color='primary' placement='bottom' content="Page">
+                            <Tooltip radius='full' color='primary' placement='bottom' content="Page">
                                 <Button as={Link} href={card.githubUrl} isIconOnly isDisabled={card.urlPrivate} color="primary" variant='flat'>
                                     <Text />
                                 </Button>
