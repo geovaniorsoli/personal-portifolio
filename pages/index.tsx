@@ -118,7 +118,7 @@ export default function Page() {
         </Popover>
         <h1 className={sty.title}>Geovani Orsoli</h1>
         <div className='flex items-center justify-center text-center'>
-          <h2 className="text-lg text-default-500">um entusiasta por</h2>
+          <h2 className="text-lg text-default-500">Um entusiasta por</h2>
           <div>
             <FlipWords className={sty.warningColor} words={words} duration={100} />
           </div>

@@ -101,7 +101,7 @@ export default function projetos() {
             </div>
             <div className='margin'>
                 <div className={sty.containerProjeto}>
-                    <h3 className="text-small text-default-500"> Deslise para o lado para ver mais fotos dos projetos</h3>
+                    <h3 className="text-small text-default-500"> Deslize para o lado para ver mais fotos dos projetos</h3>
                 </div>
             </div>
             <div className={sty.containerProjeto}>
