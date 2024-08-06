@@ -103,7 +103,7 @@ export default function Contato() {
                                     name='msg'
                                     label="Envie uma mensagem"
                                     isRequired
-                                    maxLength={56}
+                                    maxLength={300}
                                     fullWidth 
                                     onChange={(e) => setText(e.target.value)}
                                     />
@@ -127,7 +127,7 @@ export default function Contato() {
             <div className={sty.containerButton}>
                 {list.map((item, index) => (
                     <Tooltip key={index} showArrow={true} color={item.color} content={item.title} placement="bottom">
-                        <Button className={sty.button} variant="flat" color={item.color} isIconOnly>
+                        <Button as={Link} href={item.url} className={sty.button} variant="flat" color={item.color} isIconOnly>
                             <item.icon className="w-24 w-24" />
                         </Button>
                     </Tooltip>
