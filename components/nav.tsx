@@ -20,7 +20,6 @@ export default function NavigationBar() {
         { text: "Sobre", href: "/", showAnchor: false },
         { text: "Projetos", href: "/projetos", showAnchor: false },
         { text: "Contato", href: "/contato", showAnchor: false },
-        { text: "Github", href: "https://github.com/GeovaniOrsoli", showAnchor: true, isExternal: true },
         { text: "nowe", href: "https://github.com/GeovaniOrsoli", showAnchor: true, isdisable: true, isExternal: true },
     ];
 

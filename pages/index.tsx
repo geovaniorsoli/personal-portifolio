@@ -62,7 +62,7 @@ const cardsMe: CardsMe[] = [
     icon: lucide.Book,
     id: 3,
     title: "Educação",
-    description: ["Ciência da computação, Unimetrocamp (Mar 2024 - Dez 2029)", "Inglês avançado"],
+    description: ["Ciência da computação, Unimetrocamp (Mar 2024 - Dez 2029)", "Inglês avançado", "Next.js, Udemy", "PowerBI, Alura (atual)", ],
   },
   {
     icon: lucide.Code,
@@ -75,7 +75,7 @@ const cardsMe: CardsMe[] = [
 
 const words = ["Tecnologia.", "Programação.", "UI/UX.", "Design.", "IA.", "Interfaces."]
 
-const sobreMim = "Me chamo Geovani Orsoli, sou de São Paulo, tenho 18 anos e estou cursando ciência da computação. Desde sempre gostei de programar e produzir conteúdo audio-visual, Sou cativado por programação desde quando a conheci, procuro sempre estudar coisas nova, tudo pode ser alcançado com paciência e estudo."
+const sobreMim = "Me chamo Geovani Orsoli, sou de São Paulo, tenho 18 anos e cursei TI no meu ensino médio e estou cursando ciência da computação. Desde sempre gostei de programar e produzir conteúdo audio-visual, Sou cativado por programação e design desde quando conheci, procuro sempre estudar coisas nova, tudo pode ser alcançado com vontade e esforço."
 
 const githubLink = "https://github.com/GeovaniOrsoli"
 const LinkedinLink = "https://www.linkedin.com/in/geovani-orsoli/"
@@ -105,9 +105,9 @@ export default function Page() {
               <Divider />
               <div className="text-tiny">Guia</div>
               <div className='grid gap-1'>
-                <Link href='/Projetos' className="text-tiny">Projetos</Link>
-                <Link href='/Projetos' className="text-tiny">Sobre Mim</Link>
-                <Link href='/Projetos' className="text-tiny">Contato</Link>
+                <Link href='/projetos' className="text-tiny">Projetos</Link>
+                <Link href='/' className="text-tiny">Sobre Mim</Link>
+                <Link href='/contato' className="text-tiny">Contato</Link>
                 <div className="text-tiny">Links</div>
                 <Link showAnchorIcon href={CurriculumLink} className="text-tiny">Currículo</Link>
                 <Link href={githubLink} showAnchorIcon className="text-tiny">Github</Link>
@@ -158,7 +158,7 @@ export default function Page() {
         </div>
         <div className='flex items-center justify-center mt-3'>
           <Button radius='full' className='mt-3' as={Link} isExternal variant='flat' color='warning' href={CurriculumLink}>
-            Acessar Curriculum
+            Acessar Currículo
           </Button>
         </div>
       </div>
