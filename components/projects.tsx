@@ -103,7 +103,7 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
                                 </Button>
                             </Tooltip>
                             <Tooltip radius='full' color='primary' placement='bottom' content="Page">
-                                <Button as={Link} href={card.githubUrl} isIconOnly isDisabled={card.urlPrivate} color="primary" variant='flat'>
+                                <Button as={Link} href={card.url} isExternal isIconOnly isDisabled={card.urlPrivate} color="primary" variant='flat'>
                                     <Text />
                                 </Button>
                             </Tooltip>

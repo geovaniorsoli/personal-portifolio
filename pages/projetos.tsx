@@ -85,7 +85,7 @@ export default function projetos() {
             stack: ["Next.JS", "NextUI"],
             privateName: "Público",
             url: "https://vstore-valorant.vercel.app/elojob",
-            githubUrl: "https://github.com/geovaniorsoli/oitchau-facilitador-script",
+            githubUrl: "https://github.com/geovaniorsoli/vstore",
             githubPrivate: true,
             urlPrivate: false
         }
