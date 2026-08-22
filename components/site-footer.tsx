@@ -32,7 +32,7 @@ export function SiteFooter() {
               {NAV_SECTIONS.map((section) => (
                 <li key={section.id}>
                   <a
-                    href={`#${section.id}`}
+                    href={`/#${section.id}`}
                     className="transition-colors hover:text-zinc-50"
                   >
                     {t.nav[section.key]}

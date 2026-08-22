@@ -15,9 +15,10 @@ export function ProjectsSection() {
   const filteredProjects = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase()
     return PROJECTS.filter((project) => {
+      const title = project.title ?? t.projects.cardTitle
       const matchesQuery =
         normalizedQuery.length === 0 ||
-        t.projects.cardTitle.toLowerCase().includes(normalizedQuery)
+        title.toLowerCase().includes(normalizedQuery)
       const matchesTag = !selectedTag || project.tags.includes(selectedTag)
       return matchesQuery && matchesTag
     })

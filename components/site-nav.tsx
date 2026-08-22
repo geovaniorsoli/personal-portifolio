@@ -15,7 +15,7 @@ export function SiteNav() {
         {NAV_SECTIONS.map((section) => (
           <a
             key={section.id}
-            href={`#${section.id}`}
+            href={`/#${section.id}`}
             className="whitespace-nowrap transition-colors hover:text-zinc-950"
           >
             {t.nav[section.key]}
