@@ -68,8 +68,8 @@ export function SiteFooter() {
         </p>
       </div>
 
-      <div aria-hidden className="h-[4vw] select-none">
-        <p className="px-4 text-[6.6vw] leading-none font-extrabold tracking-tight whitespace-nowrap text-zinc-50 sm:px-10">
+      <div aria-hidden className="flex h-[4vw] justify-center select-none">
+        <p className="text-[6.6vw] leading-none font-extrabold tracking-tight whitespace-nowrap text-zinc-50">
           Geovani Orsoli Gongora
         </p>
       </div>

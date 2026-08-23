@@ -141,4 +141,7 @@
   html {
     @apply font-sans;
   }
+  ::selection {
+    background-color: #b0d2fa;
+  }
 }

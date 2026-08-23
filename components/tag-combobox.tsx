@@ -46,13 +46,16 @@ export function TagCombobox({
   }
 
   return (
-    <div ref={containerRef} className="relative w-full sm:w-48">
+    <div ref={containerRef} className="relative w-full">
       <div className="relative">
         <Input
           value={isOpen ? query : (value ?? "")}
-          onFocus={() => {
-            setIsOpen(true)
-            setQuery("")
+          onClick={() => {
+            setIsOpen((prev) => {
+              const next = !prev
+              if (next) setQuery("")
+              return next
+            })
           }}
           onChange={(event) => {
             setQuery(event.target.value)
@@ -60,13 +63,13 @@ export function TagCombobox({
           }}
           placeholder={value ?? placeholder}
           aria-label={placeholder}
-          className="w-full pe-8"
+          className="w-full rounded-[8px] pe-8"
         />
         <ChevronDown className="text-field-placeholder pointer-events-none absolute inset-y-0 end-2 my-auto size-4" />
       </div>
 
       {isOpen && (
-        <div className="bg-overlay absolute z-10 mt-1 w-full overflow-hidden rounded-xl border border-zinc-200 p-1.5 shadow-lg">
+        <div className="bg-overlay absolute z-10 mt-1 w-full overflow-hidden rounded-[8px] border border-zinc-200 p-1.5 shadow-lg">
           <button
             type="button"
             onClick={() => selectTag(null)}

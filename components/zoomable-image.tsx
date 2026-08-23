@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import { X } from "lucide-react"
 
+import { useLanguage } from "@/components/language-provider"
+
 interface ZoomableImageProps {
   src: string
   alt: string
@@ -21,6 +23,7 @@ export function ZoomableImage({
   priority,
   objectPosition = "center",
 }: ZoomableImageProps) {
+  const { t } = useLanguage()
   const [open, setOpen] = useState(false)
 
   useEffect(() => {
@@ -43,7 +46,7 @@ export function ZoomableImage({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        aria-label={`Ampliar imagem: ${alt}`}
+        aria-label={t.common.zoomImage.replace("{alt}", alt)}
         className={`group relative block h-full w-full cursor-zoom-in ${className}`}
       >
         <Image
@@ -67,7 +70,7 @@ export function ZoomableImage({
           <button
             type="button"
             onClick={() => setOpen(false)}
-            aria-label="Fechar"
+            aria-label={t.common.close}
             className="absolute top-5 right-5 flex size-10 cursor-pointer items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
           >
             <X className="size-5" />

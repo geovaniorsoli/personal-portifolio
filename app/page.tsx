@@ -1,14 +1,23 @@
 "use client"
 
+import { useEffect } from "react"
+
+import { ContactSection } from "@/components/contact-section"
 import { HeroSection } from "@/components/hero-section"
-import { PlaceholderSection } from "@/components/placeholder-section"
 import { ProjectsSection } from "@/components/projects-section"
 import { SiteFooter } from "@/components/site-footer"
 import { SiteNav } from "@/components/site-nav"
-import { useLanguage } from "@/components/language-provider"
+import { consumePendingScrollTarget } from "@/lib/scroll-to-section"
 
 export default function Home() {
-  const { t } = useLanguage()
+  useEffect(() => {
+    const target = consumePendingScrollTarget()
+    if (target) {
+      requestAnimationFrame(() => {
+        document.getElementById(target)?.scrollIntoView({ behavior: "smooth" })
+      })
+    }
+  }, [])
 
   return (
     <div className="min-h-screen bg-zinc-100">
@@ -16,16 +25,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <ProjectsSection />
-        <PlaceholderSection
-          id="sobre"
-          heading={t.about.heading}
-          text={t.about.placeholder}
-        />
-        <PlaceholderSection
-          id="contato"
-          heading={t.contact.heading}
-          text={t.contact.placeholder}
-        />
+        <ContactSection />
       </main>
       <SiteFooter />
     </div>

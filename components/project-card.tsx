@@ -4,15 +4,18 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { useLanguage } from "@/components/language-provider"
-import { getTagColor } from "@/lib/tag-colors"
+import { getTagColor, getTagLabel } from "@/lib/tag-colors"
 import type { Project } from "@/lib/projects"
 
 export function ProjectCard({ project }: { project: Project }) {
-  const { t } = useLanguage()
+  const { t, locale } = useLanguage()
   const title = project.title ?? t.projects.cardTitle
-  const subtitle = project.subtitle ?? t.projects.cardTag
+  const subtitle =
+    (locale === "en-US" ? project.subtitleEn : undefined) ??
+    project.subtitle ??
+    t.projects.cardTag
   const isLinked = Boolean(project.slug)
-  const meta = [project.tool, project.year].filter(Boolean).join(" · ")
+  const meta = project.year ? String(project.year) : ""
 
   const card = (
     <div
@@ -51,9 +54,9 @@ export function ProjectCard({ project }: { project: Project }) {
           return (
             <span
               key={tag}
-              className={`rounded-full px-3 py-1 text-xs font-medium ${color.bg} ${color.text}`}
+              className={`rounded-lg border px-3 py-1 text-xs font-medium ${color.bg} ${color.border} ${color.text}`}
             >
-              {tag}
+              {getTagLabel(tag, locale)}
             </span>
           )
         })}

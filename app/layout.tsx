@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Geovani Orsoli Gongora — UI/UX Designer & Motion Graphic",
+  title: "Geovani Orsoli Gongora",
   description: "Portfolio of Geovani Orsoli Gongora, UI/UX Designer & Motion Graphic.",
 };
 
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth scroll-pt-20 antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full scroll-pt-20 antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <LanguageProvider>{children}</LanguageProvider>
