@@ -146,12 +146,12 @@ export function ProjectFilters({
         </Button>
         {hasActiveFilters && (
           <Button
-            variant="tertiary"
+            variant="danger-soft"
             size="sm"
             onPress={onClear}
             className="rounded-[8px]"
           >
-            {t.projects.clearFilters}
+            {t.projects.clear}
           </Button>
         )}
       </div>

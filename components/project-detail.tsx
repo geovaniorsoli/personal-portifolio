@@ -246,12 +246,20 @@ export function ProjectDetail({ project }: { project: Project }) {
       )}
 
       <div className="mt-10 flex items-center justify-between gap-3">
-        <BackToProjectsButton label={t.projects.backToProjects} />
+        <BackToProjectsButton
+          label={
+            <>
+              <span className="sm:hidden">{t.projects.backShort}</span>
+              <span className="hidden sm:inline">{t.projects.backToProjects}</span>
+            </>
+          }
+        />
         <Link
           href={`/projetos/${nextProject.slug}`}
           className={buttonVariants({ variant: "tertiary", size: "sm" })}
         >
-          {t.projects.nextProject}
+          <span className="sm:hidden">{t.projects.nextShort}</span>
+          <span className="hidden sm:inline">{t.projects.nextProject}</span>
           <ArrowRight />
         </Link>
       </div>

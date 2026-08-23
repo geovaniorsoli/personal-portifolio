@@ -99,7 +99,7 @@ export function SkillsMarquee() {
             return (
               <span
                 key={skill}
-                className={`mx-2.5 shrink-0 border-8 px-8 py-4 text-2xl font-bold sm:text-3xl ${radius} ${color.bg} ${color.border} ${color.text}`}
+                className={`mx-2 shrink-0 border-4 px-4 py-2 text-sm font-bold sm:mx-2.5 sm:border-8 sm:px-8 sm:py-4 sm:text-3xl ${radius} ${color.bg} ${color.border} ${color.text}`}
               >
                 {skill}
               </span>

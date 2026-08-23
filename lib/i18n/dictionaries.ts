@@ -39,7 +39,9 @@ const dictionaries = {
       filterModalTitle: "Filtrar projetos",
       cancel: "Cancelar",
       backToProjects: "Voltar para projetos",
+      backShort: "Voltar",
       nextProject: "Conhecer próximo projeto",
+      nextShort: "Próximo",
       videoTitle: "Vídeo do projeto",
     },
     contact: {
@@ -106,7 +108,9 @@ const dictionaries = {
       filterModalTitle: "Filter projects",
       cancel: "Cancel",
       backToProjects: "Back to projects",
+      backShort: "Back",
       nextProject: "See next project",
+      nextShort: "Next",
       videoTitle: "Project video",
     },
     contact: {
