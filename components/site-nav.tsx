@@ -26,7 +26,7 @@ export function SiteNav() {
           aria-label={t.nav.home}
           className="shrink-0"
         >
-          <Avatar className="size-9 rounded-full bg-blue-500 sm:size-10">
+          <Avatar className="size-9 rounded-full bg-blue-500 p-1 sm:size-10">
             <Avatar.Image
               src="/Eu.png"
               alt="Geovani Orsoli Gongora"
