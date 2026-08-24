@@ -3,6 +3,7 @@ import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 import { LanguageProvider } from "@/components/language-provider";
+import { LogRocketProvider } from "@/components/logrocket-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,9 +24,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${geistMono.variable} h-full scroll-pt-20 antialiased`}
+      className={`${inter.variable} ${geistMono.variable} h-full scroll-pt-28 antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <LogRocketProvider />
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

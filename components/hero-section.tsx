@@ -26,7 +26,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="flex min-h-dvh flex-col px-6 pt-20 pb-16 text-center"
+      className="flex min-h-dvh flex-col px-6 pt-28 pb-16 text-center"
     >
       <div className="flex flex-1 flex-col items-center justify-center">
         <Avatar className="size-56 rounded-full bg-blue-500 shadow-lg shadow-zinc-900/5 sm:size-64">
