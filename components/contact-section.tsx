@@ -52,7 +52,7 @@ export function ContactSection() {
     },
     {
       name: t.contact.resume,
-      href: "https://docs.google.com/document/d/1nnljCgs-6u_tL711w67NUjOt4jQVmVH2jyN3xfTPrEE/edit?usp=sharing",
+      href: "https://docs.google.com/document/d/156I-6N2GuUbb8is2AL8SSOU1CaZXp6BOjzW8IdMdpwI/edit?usp=sharing",
       icon: FileText,
     },
     {
