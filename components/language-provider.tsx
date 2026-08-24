@@ -22,11 +22,19 @@ const DEFAULT_LOCALE: Locale = "pt-BR"
 
 const listeners = new Set<() => void>()
 
+function detectBrowserLocale(): Locale {
+  const browserLanguages = window.navigator.languages ?? [window.navigator.language]
+  const isPortuguese = browserLanguages.some((lang) =>
+    lang.toLowerCase().startsWith("pt")
+  )
+  return isPortuguese ? "pt-BR" : "en-US"
+}
+
 function readStoredLocale(): Locale {
   const stored = window.localStorage.getItem(STORAGE_KEY)
   return stored && locales.includes(stored as Locale)
     ? (stored as Locale)
-    : DEFAULT_LOCALE
+    : detectBrowserLocale()
 }
 
 function getServerSnapshot(): Locale {

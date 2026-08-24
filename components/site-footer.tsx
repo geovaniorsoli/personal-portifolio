@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { useLanguage } from "@/components/language-provider"
 import { NAV_SECTIONS } from "@/lib/nav-sections"
 import { goToSection } from "@/lib/scroll-to-section"
+import { CV_URL } from "@/lib/site"
 
 const SOCIAL_LINKS = [
   { name: "GitHub", href: "https://github.com/GeovaniOrsoli" },
@@ -48,6 +49,16 @@ export function SiteFooter() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href={CV_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="transition-colors hover:text-zinc-50"
+                >
+                  {t.contact.resume}
+                </a>
+              </li>
             </ul>
           </div>
 

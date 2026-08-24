@@ -5,6 +5,7 @@ import { Input, TextArea } from "@heroui/react"
 import { FileText, Mail } from "lucide-react"
 
 import { useLanguage } from "@/components/language-provider"
+import { CV_URL } from "@/lib/site"
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mjvqzowo"
 
@@ -52,7 +53,7 @@ export function ContactSection() {
     },
     {
       name: t.contact.resume,
-      href: "https://docs.google.com/document/d/156I-6N2GuUbb8is2AL8SSOU1CaZXp6BOjzW8IdMdpwI/edit?usp=sharing",
+      href: CV_URL,
       icon: FileText,
     },
     {

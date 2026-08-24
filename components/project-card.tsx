@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -9,6 +10,7 @@ import type { Project } from "@/lib/projects"
 
 export function ProjectCard({ project }: { project: Project }) {
   const { t, locale } = useLanguage()
+  const [loaded, setLoaded] = useState(false)
   const title = project.title ?? t.projects.cardTitle
   const subtitle =
     (locale === "en-US" ? project.subtitleEn : undefined) ??
@@ -37,14 +39,22 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="relative mt-5 aspect-video w-full overflow-hidden rounded-xl border border-zinc-200 bg-zinc-100">
         {project.image && (
-          <Image
-            src={project.image}
-            alt={title}
-            fill
-            style={{ objectPosition: project.imagePosition ?? "center" }}
-            className="object-cover"
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-          />
+          <>
+            {!loaded && (
+              <div className="absolute inset-0 animate-pulse bg-zinc-200" aria-hidden />
+            )}
+            <Image
+              src={project.image}
+              alt={title}
+              fill
+              style={{ objectPosition: project.imagePosition ?? "center" }}
+              onLoad={() => setLoaded(true)}
+              className={`object-cover transition-opacity duration-300 ease-out ${
+                loaded ? "opacity-100" : "opacity-0"
+              }`}
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            />
+          </>
         )}
       </div>
 

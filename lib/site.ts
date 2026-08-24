@@ -9,3 +9,5 @@ export const SITE_OG_IMAGE = {
   width: 1200,
   height: 630,
 }
+
+export const CV_URL = "/cv-geovani-orsoli-gongora.pdf"

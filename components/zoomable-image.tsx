@@ -25,6 +25,7 @@ export function ZoomableImage({
 }: ZoomableImageProps) {
   const { t } = useLanguage()
   const [open, setOpen] = useState(false)
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     if (!open) return
@@ -49,14 +50,20 @@ export function ZoomableImage({
         aria-label={t.common.zoomImage.replace("{alt}", alt)}
         className={`group relative block h-full w-full cursor-zoom-in ${className}`}
       >
+        {!priority && !loaded && (
+          <div className="absolute inset-0 animate-pulse bg-zinc-200" aria-hidden />
+        )}
         <Image
           src={src}
           alt={alt}
           fill
           sizes={sizes}
           priority={priority}
+          onLoad={() => setLoaded(true)}
           style={{ objectPosition }}
-          className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+          className={`object-cover transition-all duration-300 ease-out group-hover:scale-[1.03] ${
+            priority || loaded ? "opacity-100" : "opacity-0"
+          }`}
         />
       </button>
 

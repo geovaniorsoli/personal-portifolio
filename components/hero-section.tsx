@@ -1,11 +1,12 @@
 "use client"
 
-import { Avatar } from "@heroui/react"
+import Image from "next/image"
 
 import { useLanguage } from "@/components/language-provider"
 import { SkillsMarquee } from "@/components/skills-marquee"
 import { Highlighter } from "@/components/ui/highlighter"
 import Text3DFlip from "@/components/ui/text-3d-flip"
+import { CV_URL } from "@/lib/site"
 
 const BIRTH_DATE = { year: 2005, month: 9, day: 30 }
 
@@ -29,16 +30,16 @@ export function HeroSection() {
       className="flex min-h-dvh flex-col px-6 pt-28 pb-16 text-center"
     >
       <div className="flex flex-1 flex-col items-center justify-center">
-        <Avatar className="size-56 rounded-full bg-blue-500 shadow-lg shadow-zinc-900/5 sm:size-64">
-          <Avatar.Image
+        <div className="relative size-56 overflow-hidden rounded-full bg-blue-500 shadow-lg shadow-zinc-900/5 sm:size-64">
+          <Image
             src="/Eu.png"
             alt="Geovani Orsoli Gongora"
+            fill
+            priority
+            sizes="(min-width: 640px) 256px, 224px"
             className="rounded-full object-cover"
           />
-          <Avatar.Fallback className="rounded-full text-4xl font-semibold text-zinc-400">
-            GO
-          </Avatar.Fallback>
-        </Avatar>
+        </div>
 
         <h1 className="mt-8 justify-center text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
           Geovani Orsoli Gongora
@@ -57,6 +58,15 @@ export function HeroSection() {
         <p className="mt-6 max-w-3xl text-lg font-medium leading-relaxed text-[#46464C]">
           {bio}
         </p>
+
+        <a
+          href={CV_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 inline-flex h-10 items-center justify-center rounded-full bg-blue-500 px-6 text-sm font-medium text-white transition-colors hover:bg-blue-600"
+        >
+          {t.contact.resume}
+        </a>
       </div>
 
       <SkillsMarquee />

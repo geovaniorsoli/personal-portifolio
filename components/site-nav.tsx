@@ -1,6 +1,7 @@
 "use client"
 
-import { Avatar, Button } from "@heroui/react"
+import { Button } from "@heroui/react"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 
@@ -26,16 +27,15 @@ export function SiteNav() {
           aria-label={t.nav.home}
           className="shrink-0"
         >
-          <Avatar className="size-9 rounded-full bg-blue-500 p-1 sm:size-10">
-            <Avatar.Image
+          <div className="relative size-9 overflow-hidden rounded-full bg-blue-500 p-1 sm:size-10">
+            <Image
               src="/Eu.png"
               alt="Geovani Orsoli Gongora"
+              fill
+              sizes="40px"
               className="rounded-full object-cover"
             />
-            <Avatar.Fallback className="rounded-full text-xs font-semibold text-white">
-              GO
-            </Avatar.Fallback>
-          </Avatar>
+          </div>
         </Link>
 
         <nav className="flex items-center gap-3 text-base text-zinc-700 sm:gap-8">
