@@ -1,7 +1,10 @@
 "use client"
 
+import { usePathname, useRouter } from "next/navigation"
+
 import { useLanguage } from "@/components/language-provider"
 import { NAV_SECTIONS } from "@/lib/nav-sections"
+import { goToSection } from "@/lib/scroll-to-section"
 
 const SOCIAL_LINKS = [
   { name: "GitHub", href: "https://github.com/GeovaniOrsoli" },
@@ -10,6 +13,8 @@ const SOCIAL_LINKS = [
 
 export function SiteFooter() {
   const { t } = useLanguage()
+  const router = useRouter()
+  const pathname = usePathname()
 
   return (
     <footer className="overflow-hidden bg-zinc-900 text-zinc-500">
@@ -33,6 +38,10 @@ export function SiteFooter() {
                 <li key={section.id}>
                   <a
                     href={`/#${section.id}`}
+                    onClick={(event) => {
+                      event.preventDefault()
+                      goToSection(section.id, pathname, router.push)
+                    }}
                     className="transition-colors hover:text-zinc-50"
                   >
                     {t.nav[section.key]}
