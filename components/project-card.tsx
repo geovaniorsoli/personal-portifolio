@@ -59,7 +59,7 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap items-center gap-2">
         {project.tags.map((tag) => {
           const color = getTagColor(tag)
           return (
@@ -71,16 +71,14 @@ export function ProjectCard({ project }: { project: Project }) {
             </span>
           )
         })}
-      </div>
 
-      {isLinked && (
-        <div className="mt-auto flex justify-end pt-5">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-500 transition-colors group-hover:bg-blue-200">
+        {isLinked && (
+          <span className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-500 transition-colors group-hover:bg-blue-200">
             {t.projects.viewProject}
             <ArrowUpRight className="size-4" />
           </span>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   )
 
