@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { ArrowUpRight } from "lucide-react"
 
 import { useLanguage } from "@/components/language-provider"
 import { getTagColor, getTagLabel } from "@/lib/tag-colors"
@@ -21,7 +22,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
   const card = (
     <div
-      className={`h-full rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 ease-out sm:p-6 ${
+      className={`group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 ease-out sm:p-6 ${
         isLinked
           ? "cursor-pointer hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-zinc-900/10"
           : ""
@@ -71,6 +72,15 @@ export function ProjectCard({ project }: { project: Project }) {
           )
         })}
       </div>
+
+      {isLinked && (
+        <div className="mt-auto flex justify-end pt-5">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-500 transition-colors group-hover:bg-blue-200">
+            {t.projects.viewProject}
+            <ArrowUpRight className="size-4" />
+          </span>
+        </div>
+      )}
     </div>
   )
 
