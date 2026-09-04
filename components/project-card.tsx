@@ -73,7 +73,7 @@ export function ProjectCard({ project }: { project: Project }) {
         })}
 
         {isLinked && (
-          <span className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-500 transition-colors group-hover:bg-blue-200">
+          <span className="flex w-full items-center justify-center gap-1.5 rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-500 transition-colors group-hover:bg-blue-200 sm:ml-auto sm:w-auto sm:inline-flex sm:justify-start">
             {t.projects.viewProject}
             <ArrowUpRight className="size-4" />
           </span>
